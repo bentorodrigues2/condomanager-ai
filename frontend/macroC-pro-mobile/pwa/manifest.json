@@ -1,0 +1,10 @@
+
+{
+    "name": "CondoManager-AI",
+    "short_name": "CondoManager",
+    "start_url": "/estrutura.html",
+    "display": "standalone",
+    "background_color": "#111",
+    "theme_color": "#0077ff",
+    "icons": []
+}

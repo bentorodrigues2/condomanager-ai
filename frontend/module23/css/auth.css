@@ -1,0 +1,48 @@
+
+#login-wrapper, #register-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+#login-box, #register-box {
+    width: 360px;
+    padding: 30px;
+    background: #111;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#login-box input, #register-box input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+#login-btn, #register-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #0077ff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#login-error, #register-error {
+    color: #ff4444;
+    margin-top: 10px;
+}
+
+#go-register, #go-login {
+    display: block;
+    margin-top: 20px;
+    color: #00aaff;
+    cursor: pointer;
+}

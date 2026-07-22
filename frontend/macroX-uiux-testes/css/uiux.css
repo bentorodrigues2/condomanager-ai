@@ -1,0 +1,35 @@
+
+#uiux-wrapper {
+    padding: 40px;
+    color: white;
+}
+
+#uiux-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+#uiux-menu button {
+    background: #8844ff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.section-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background: #333;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}

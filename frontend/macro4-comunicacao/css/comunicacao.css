@@ -1,0 +1,28 @@
+
+#comunicacao-wrapper {
+    padding: 40px;
+    color: white;
+}
+
+#comunicacao-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+#comunicacao-menu button {
+    background: #ff8800;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.section-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

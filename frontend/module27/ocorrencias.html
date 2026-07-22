@@ -1,0 +1,22 @@
+
+<div id="ocorrencias-wrapper">
+    <h2>Gestão de Ocorrências</h2>
+
+    <button id="add-ocorrencia-btn">Nova Ocorrência</button>
+
+    <div id="ocorrencias-list"></div>
+
+    <div id="ocorrencia-form" style="display:none;">
+        <h3 id="form-title">Nova Ocorrência</h3>
+        <input type="text" id="ocorr-titulo" placeholder="Título da Ocorrência">
+        <textarea id="ocorr-descricao" placeholder="Descrição detalhada"></textarea>
+        <select id="ocorr-estado">
+            <option value="pendente">Pendente</option>
+            <option value="analise">Em Análise</option>
+            <option value="resolvida">Resolvida</option>
+        </select>
+        <button id="save-ocorrencia-btn">Guardar</button>
+        <button id="cancel-ocorrencia-btn">Cancelar</button>
+        <p id="form-error"></p>
+    </div>
+</div>

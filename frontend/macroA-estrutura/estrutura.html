@@ -1,0 +1,41 @@
+
+<div id="app-wrapper">
+
+    <div id="topbar">
+        <h1>CondoManager‑AI</h1>
+        <button id="theme-toggle">Tema</button>
+    </div>
+
+    <div id="main-menu">
+        <button onclick="go('operacional')">Operacional</button>
+        <button onclick="go('financeiro')">Financeiro</button>
+        <button onclick="go('documental')">Documental</button>
+        <button onclick="go('comunicacao')">Comunicação</button>
+        <button onclick="go('ia')">IA Assistente</button>
+    </div>
+
+    <div id="dashboard">
+        <h2>Dashboard Global</h2>
+
+        <div class="dash-card" id="dash-financeiro">
+            <h3>Resumo Financeiro</h3>
+            <p id="financeiro-resumo">Carregando...</p>
+        </div>
+
+        <div class="dash-card" id="dash-ocorrencias">
+            <h3>Ocorrências Recentes</h3>
+            <div id="ocorrencias-recentes">Carregando...</div>
+        </div>
+
+        <div class="dash-card" id="dash-assembleias">
+            <h3>Próximas Assembleias</h3>
+            <div id="assembleias-proximas">Carregando...</div>
+        </div>
+
+        <div class="dash-card" id="dash-alertas">
+            <h3>Alertas</h3>
+            <div id="alertas-lista">Carregando...</div>
+        </div>
+    </div>
+
+</div>

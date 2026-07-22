@@ -1,0 +1,28 @@
+
+#admin-wrapper {
+    padding: 40px;
+    color: white;
+}
+
+#admin-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+#admin-menu button {
+    background: #0066aa;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.section-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

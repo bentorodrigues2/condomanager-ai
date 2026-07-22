@@ -1,0 +1,81 @@
+
+#condominios-wrapper {
+    padding: 40px;
+    color: white;
+}
+
+#add-condominio-btn {
+    background: #0077ff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+#condominios-list {
+    margin-top: 30px;
+}
+
+.condominio-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.condominio-actions button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #00aaff;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+}
+
+#condominio-form {
+    margin-top: 40px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#condominio-form input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+#save-condominio-btn {
+    background: #00cc66;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+#cancel-condominio-btn {
+    background: #555;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+#form-error {
+    color: #ff4444;
+    margin-top: 10px;
+}

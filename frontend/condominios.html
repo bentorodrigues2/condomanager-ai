@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Condomínios</title>
+    <link rel="stylesheet" href="module25/css/condominios.css">
+</head>
+<body>
+    
+<div id="condominios-wrapper">
+    <h2>Gestão de Condomínios</h2>
+
+    <button id="add-condominio-btn">Adicionar Condomínio</button>
+
+    <div id="condominios-list"></div>
+
+    <div id="condominio-form" style="display:none;">
+        <h3 id="form-title">Novo Condomínio</h3>
+        <input type="text" id="cond-nome" placeholder="Nome do Condomínio">
+        <input type="text" id="cond-morada" placeholder="Morada">
+        <input type="text" id="cond-gestor" placeholder="Gestor">
+        <button id="save-condominio-btn">Guardar</button>
+        <button id="cancel-condominio-btn">Cancelar</button>
+        <p id="form-error"></p>
+    </div>
+</div>
+
+    <script src="module25/js/condominios.js"></script>
+</body>
+</html>

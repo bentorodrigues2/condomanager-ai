@@ -1,0 +1,23 @@
+
+<div id="pagamentos-wrapper">
+    <h2>Pagamentos Online</h2>
+
+    <button id="add-pagamento-btn">Novo Pagamento</button>
+
+    <div id="pagamentos-list"></div>
+
+    <div id="pagamento-form" style="display:none;">
+        <h3 id="form-title">Novo Pagamento</h3>
+        <input type="text" id="pag-condominio" placeholder="Condomínio">
+        <input type="text" id="pag-fracao" placeholder="Fração">
+        <input type="number" id="pag-valor" placeholder="Valor (€)" step="0.01">
+        <select id="pag-metodo">
+            <option value="mbway">MB WAY</option>
+            <option value="referencia">Referência Multibanco</option>
+            <option value="cartao">Cartão de Crédito</option>
+        </select>
+        <button id="save-pagamento-btn">Gerar Pagamento</button>
+        <button id="cancel-pagamento-btn">Cancelar</button>
+        <p id="form-error"></p>
+    </div>
+</div>

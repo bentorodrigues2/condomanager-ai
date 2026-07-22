@@ -1,0 +1,87 @@
+
+#notificacoes-wrapper {
+    padding: 40px;
+    color: white;
+}
+
+#add-notificacao-btn {
+    background: #0077ff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+#notificacoes-list {
+    margin-top: 30px;
+}
+
+.notificacao-card {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.notificacao-card p {
+    margin: 4px 0;
+}
+
+.notificacao-actions button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.read-btn {
+    background: #00cc66;
+    color: white;
+}
+
+.delete-btn {
+    background: #ff4444;
+    color: white;
+}
+
+#notificacao-form {
+    margin-top: 40px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#notificacao-form input,
+#notificacao-form textarea,
+#notificacao-form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+#save-notificacao-btn {
+    background: #00cc66;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-top: 20px;
+}
+
+#cancel-notificacao-btn {
+    background: #555;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin-left: 10px;
+}
+
+#form-error {
+    color: #ff4444;
+    margin-top: 10px;
+}

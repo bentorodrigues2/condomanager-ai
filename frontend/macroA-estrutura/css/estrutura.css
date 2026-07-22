@@ -1,0 +1,53 @@
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: var(--bg);
+    color: var(--text);
+}
+
+:root {
+    --bg: #111;
+    --text: #fff;
+    --card: #222;
+}
+
+.light {
+    --bg: #f5f5f5;
+    --text: #111;
+    --card: #fff;
+}
+
+#topbar {
+    background: #0077ff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+#main-menu {
+    display: flex;
+    gap: 12px;
+    padding: 20px;
+}
+
+#main-menu button {
+    background: #0077ff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+#dashboard {
+    padding: 20px;
+}
+
+.dash-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
