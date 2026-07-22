@@ -1,22 +1,17 @@
 
-import React, { useEffect } from 'react';
-import AppRouter from './router/AppRouter';
-import { NotificationProvider } from './context/NotificationContext';
-import NotificationCenter from './components/NotificationCenter';
-import useRealtimeNotifications from './hooks/useRealtimeNotifications';
-import registerSW from './registerServiceWorker';
+import React from "react";
 
 export default function App() {
-  useRealtimeNotifications();
-
-  useEffect(() => {
-    registerSW();
-  }, []);
-
   return (
-    <NotificationProvider>
-      <NotificationCenter />
-      <AppRouter />
-    </NotificationProvider>
+    <div style={{
+      fontFamily: "Arial",
+      padding: "40px",
+      textAlign: "center",
+      fontSize: "32px",
+      color: "#333"
+    }}>
+      <h1>CondoManager AI</h1>
+      <p>Frontend está a funcionar ✔️</p>
+    </div>
   );
 }
