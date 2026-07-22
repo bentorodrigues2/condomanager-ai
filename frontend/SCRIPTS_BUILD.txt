@@ -1,0 +1,7 @@
+
+# Build final da aplicação
+npm install
+npm run build
+
+# A pasta final será:
+dist/

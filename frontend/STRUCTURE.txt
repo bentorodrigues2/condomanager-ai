@@ -1,0 +1,17 @@
+
+Estrutura final da aplicação:
+
+frontend/
+  src/
+    components/
+    pages/
+    services/
+    hooks/
+    context/
+    router/
+    styles/
+  public/
+    icons/
+    manifest.json
+    service-worker.js
+  dist/ (após build)

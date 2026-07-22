@@ -1,0 +1,17 @@
+
+CHECKLIST FINAL DE PRODUÇÃO:
+
+✔ Build concluído (dist/)
+✔ PWA funcional
+✔ Service Worker registado
+✔ Manifest válido
+✔ Icons incluídos
+✔ Rotas protegidas
+✔ IA funcional
+✔ Chat realtime
+✔ Documentos OK
+✔ Auditoria OK
+✔ Exportações OK
+✔ Sem erros no console
+✔ Sem warnings no build
+✔ Deploy pronto

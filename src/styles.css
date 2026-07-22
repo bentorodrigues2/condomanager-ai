@@ -1,0 +1,57 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b1622;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-text {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.area-pessoal {
+  background-color: #0056b3; /* azul institucional */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.video-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.ai {
+  color: #00b37e;
+}
+
+.video-placeholder img {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.footer {
+  position: relative;
+  height: 120px;
+  background: url('/skyline.png') bottom center no-repeat;
+  background-size: cover;
+}

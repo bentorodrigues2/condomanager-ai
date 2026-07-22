@@ -1,0 +1,35 @@
+
+TESTES BÁSICOS ANTES DO DEPLOY:
+
+1. LOGIN
+   - Testar login com gestor, proprietário e fornecedor.
+
+2. ROTAS PROTEGIDAS
+   - Gestor deve aceder a tudo.
+   - Proprietário NÃO deve aceder a obras.
+   - Fornecedor NÃO deve aceder ao financeiro.
+
+3. PWA
+   - Abrir no Chrome → DevTools → Application → Manifest
+   - Verificar se aparece "Install".
+
+4. IA
+   - Abrir /assistente-ia
+   - Enviar um prompt simples.
+
+5. CHAT
+   - Abrir /modulos/chat
+   - Enviar mensagem e ver realtime.
+
+6. DOCUMENTOS
+   - Upload de PDF
+   - Abrir link público
+
+7. DASHBOARD PREMIUM
+   - Verificar gráficos carregados
+
+8. EXPORTAÇÕES
+   - Exportar CSV e verificar conteúdo
+
+9. AUDITORIA
+   - Verificar se ações aparecem na tabela auditoria

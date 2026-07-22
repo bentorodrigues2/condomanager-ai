@@ -1,0 +1,16 @@
+
+{
+  "expo": {
+    "name": "CondoManagerAI",
+    "slug": "condomanager-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "plugins": [],
+    "sdkVersion": "50.0.0",
+    "platforms": ["ios", "android"],
+    "extra": {
+      "supabaseUrl": "",
+      "supabaseAnonKey": ""
+    }
+  }
+}

@@ -1,0 +1,11 @@
+
+PASSOS PARA VERIFICAR PWA:
+
+1. Abrir localhost:5173
+2. Chrome DevTools → Application
+3. Verificar:
+   - Manifest OK
+   - Service Worker ativo
+   - "Install App" disponível
+4. Desligar Wi-Fi
+5. Recarregar → App deve abrir offline
