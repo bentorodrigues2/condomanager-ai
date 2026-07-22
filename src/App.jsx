@@ -9,7 +9,7 @@ export default function App() {
       
 <div className="video-wrapper">
   <video
-    src="/Videos/logo-animation.mp4"
+    src="/assets/video//assets/video/logo-animation.mp4"
     autoPlay
     loop
     muted
