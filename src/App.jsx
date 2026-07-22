@@ -1,3 +1,4 @@
+console.log("Force Vercel redeploy");
 
 import AppRouter from "./router";
 import { AuthProvider } from "./auth/AuthContext";
