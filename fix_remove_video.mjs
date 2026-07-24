@@ -1,9 +1,14 @@
-// fix_remove_video.js
+// fix_remove_video.mjs
 // Script automático para remover o vídeo fullscreen que está a bloquear o login
-// Usado na v2.0 — corre no VS Code com Node: `node fix_remove_video.js`
+// Corre com: node fix_remove_video.mjs
 
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+// Setup para ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Diretórios onde o vídeo pode estar
 const possibleFiles = [
@@ -19,7 +24,7 @@ const possibleFiles = [
 console.log("🔍 A procurar blocos de vídeo para remover...");
 
 possibleFiles.forEach((file) => {
-  const filePath = path.join(process.cwd(), file);
+  const filePath = path.join(__dirname, file);
 
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, "utf8");
@@ -28,7 +33,10 @@ possibleFiles.forEach((file) => {
     const videoRegex = /<video[\s\S]*?<\/video>/gi;
 
     if (videoRegex.test(content)) {
-      content = content.replace(videoRegex, "{/* Vídeo removido temporariamente para desbloquear login */}");
+      content = content.replace(
+        videoRegex,
+        "{/* Vídeo removido temporariamente para desbloquear login */}"
+      );
       fs.writeFileSync(filePath, content, "utf8");
 
       console.log(`✔ Vídeo removido de: ${file}`);
@@ -45,7 +53,7 @@ const cssFiles = [
 ];
 
 cssFiles.forEach((file) => {
-  const filePath = path.join(process.cwd(), file);
+  const filePath = path.join(__dirname, file);
 
   if (fs.existsSync(filePath)) {
     let css = fs.readFileSync(filePath, "utf8");
@@ -53,7 +61,10 @@ cssFiles.forEach((file) => {
     const cssRegex = /\.video-background\s*\{[\s\S]*?\}/gi;
 
     if (cssRegex.test(css)) {
-      css = css.replace(cssRegex, "/* Vídeo removido temporariamente para desbloquear login */");
+      css = css.replace(
+        cssRegex,
+        "/* Vídeo removido temporariamente para desbloquear login */"
+      );
       fs.writeFileSync(filePath, css, "utf8");
 
       console.log(`✔ CSS do vídeo desativado em: ${file}`);
