@@ -12,7 +12,7 @@ fs.mkdirSync(componentsDir, { recursive: true });
 // Conteúdo dos ficheiros
 const appContent = `
 import Header from './components/Header';
-import VideoSection from './components/VideoSection';
+// import VideoSection removido
 import Footer from './components/Footer';
 import './styles.css';
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <VideoSection />
+      {/* VideoSection removido */}
       <Footer />
     </div>
   );

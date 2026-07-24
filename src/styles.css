@@ -29,10 +29,7 @@ body {
   font-weight: 600;
 }
 
-.video-section {
-  text-align: center;
-  margin-top: 60px;
-}
+/* CSS DE VIDEO REMOVIDO */
 
 .logo img {
   width: 80px;
@@ -42,12 +39,7 @@ body {
   color: #00b37e;
 }
 
-.video-placeholder img {
-  width: 300px;
-  height: 300px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
+/* CSS DE VIDEO REMOVIDO */
 
 .footer {
   position: relative;
@@ -58,16 +50,6 @@ body {
 
 
 
-.video-wrapper {
-  width: 960px;
-  margin: 0 auto;
-  padding-top: 20px;
-}
+/* Moldura de vídeo removida para desbloquear login */
 
-.logo-video {
-  width: 100%;
-  height: auto;
-  max-width: 960px;
-  object-fit: contain;
-  display: block;
-}
+/* Moldura de vídeo removida para desbloquear login */
