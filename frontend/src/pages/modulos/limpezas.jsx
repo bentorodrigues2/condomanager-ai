@@ -6,7 +6,7 @@ import Table from '../../components/Table';
 // import removido automaticamente
 
 export default function Limpezas() {
-  const { data } = useSupabaseTable('limpezas');
+  const { data } = null;
 
   return (
     <div style={{ display: 'flex' }}>

@@ -6,7 +6,7 @@ import Table from '../../components/Table';
 // import removido automaticamente
 
 export default function Financeiro() {
-  const { data } = useSupabaseTable('financeiro_movimentos');
+  const { data } = null;
 
   return (
     <div style={{ display: 'flex' }}>

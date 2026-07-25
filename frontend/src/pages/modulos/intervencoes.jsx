@@ -8,7 +8,7 @@ import Input from '../../components/Input';
 // import removido automaticamente
 
 export default function Intervencoes() {
-  const { data, insert } = useSupabaseTable('intervencoes');
+  const { data, insert } = null;
   const [descricao, setDescricao] = useState('');
 
   async function adicionar() {

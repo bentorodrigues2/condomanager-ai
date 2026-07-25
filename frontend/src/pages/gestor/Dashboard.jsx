@@ -6,9 +6,9 @@ import Card from '../../components/Card';
 import '../../styles/theme.css';
 
 export default function DashboardGestor() {
-  const { data: condominios } = useSupabaseTable('condominios');
-  const { data: obras } = useSupabaseTable('obras');
-  const { data: limpezas } = useSupabaseTable('limpezas');
+  const { data: condominios } = null;
+  const { data: obras } = null;
+  const { data: limpezas } = null;
 
   return (
     <div style={{ display: 'flex' }}>
