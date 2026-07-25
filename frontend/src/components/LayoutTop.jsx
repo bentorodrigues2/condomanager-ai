@@ -27,7 +27,6 @@ export default function LayoutTop() {
   );
 }
 
-// Integracao do video abaixo da moldura
 export function LayoutTopWithVideo() {
   return (
     <div>
