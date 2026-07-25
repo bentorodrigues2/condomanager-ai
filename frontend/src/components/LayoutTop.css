@@ -1,8 +1,8 @@
-/* Container principal da secção */
+/* Container principal */
 .layout-top {
   position: relative;
   width: 100%;
-  height: 260px; /* altura fixa para evitar duplicação */
+  height: 300px; /* altura fixa */
   overflow: hidden;
 }
 
@@ -13,30 +13,28 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantém proporção */
+  object-fit: cover;
   z-index: 1;
 }
 
-/* Overlay com texto */
+/* Overlay com texto e botão */
 .layout-top-overlay {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: 20px;
+}
+
+/* Texto pequeno */
+.condo-text {
+  font-size: 8px;
   color: white;
-}
-
-/* Centro */
-.layout-top-center {
-  text-align: center;
-}
-
-.logo {
-  width: 60px;
-  height: auto;
+  margin: 0;
 }
 
 /* Botão */
@@ -44,30 +42,37 @@
   background-color: #4caf50;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 12px;
 }
 
-/* RESPONSIVO */
+/* Vídeo centrado sobre a skyline */
+.layout-top-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .layout-top {
-    height: 200px; /* reduz altura em mobile */
+    height: 220px;
   }
 
-  .layout-top-overlay {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    text-align: center;
+  .condo-text {
+    font-size: 7px;
   }
 
-  .layout-top-left,
-  .layout-top-right {
-    display: none; /* remove elementos laterais em mobile */
+  .area-pessoal-btn {
+    font-size: 10px;
+    padding: 5px 10px;
   }
 
-  .logo {
-    width: 50px;
+  .layout-top-video {
+    width: 90%;
   }
 }

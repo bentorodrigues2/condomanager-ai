@@ -5,37 +5,26 @@ import VideoFrame from "./VideoFrame";
 export default function LayoutTop() {
   return (
     <div className="layout-top">
-      {/* Imagem de fundo servida diretamente da pasta public */}
+      {/* Skyline com logotipo incorporado */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
         className="layout-top-bg"
       />
 
+      {/* Texto e botão */}
       <div className="layout-top-overlay">
-        <div className="layout-top-left">
-          <h3>Condominio de R. Bento Rodrigues, 2 - Paio Pires</h3>
-        </div>
+        <p className="condo-text">
+          Condominio - R. Bento Rodrigues 2, Aldeia de Paio Pires
+        </p>
 
-        <div className="layout-top-center">
-          <img src="/logo.png" className="logo" alt="Logo" />
-          <h1>CondoManager AI</h1>
-          <p>PWA e Automacao Ativa</p>
-        </div>
-
-        <div className="layout-top-right">
-          <button className="area-pessoal-btn">Area Pessoal</button>
-        </div>
+        <button className="area-pessoal-btn">Área Pessoal</button>
       </div>
-    </div>
-  );
-}
 
-export function LayoutTopWithVideo() {
-  return (
-    <div>
-      <LayoutTop />
-      <VideoFrame />
+      {/* Vídeo centrado */}
+      <div className="layout-top-video">
+        <VideoFrame />
+      </div>
     </div>
   );
 }

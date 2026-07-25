@@ -7,8 +7,7 @@ export default function VideoFrame() {
       <div className="video-wrapper">
         <video
           src="/assets/videos/intro.mp4"
-          autoPlay
-          muted
+          controls
           loop
           playsInline
         />
