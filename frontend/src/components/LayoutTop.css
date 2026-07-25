@@ -2,7 +2,7 @@
 .layout-top {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* adapta ao ecrã */
+  min-height: 100vh;
   overflow: hidden;
   background-color: #02030a;
 }
@@ -50,7 +50,7 @@
 /* Logotipo centrado e mais baixo */
 .layout-top-logo {
   position: absolute;
-  top: 14vh; /* desce o logotipo */
+  top: 14vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
