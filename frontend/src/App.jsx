@@ -1,10 +1,10 @@
 import React from "react";
-import { LayoutTopWithVideo } from "./components/LayoutTop";
+import LayoutTop from "./components/LayoutTop";
 
 function App() {
   return (
     <div>
-      <LayoutTopWithVideo />
+      <LayoutTop />
     </div>
   );
 }
