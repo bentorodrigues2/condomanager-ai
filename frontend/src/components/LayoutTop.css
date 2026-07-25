@@ -2,19 +2,19 @@
 .layout-top {
   position: relative;
   width: 100%;
-  height: 520px; /* altura ajustada para skyline + logotipo + vídeo */
+  height: 520px;
   overflow: hidden;
+  background-color: #02030a; /* fundo escuro */
 }
 
-/* Skyline sem zoom, centrada e responsiva */
+/* Skyline limpa e adaptativa */
 .layout-top-bg {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;        /* usa a largura do ecrã */
+  left: 0;
+  width: 100%;
   height: 100%;
-  object-fit: contain; /* NÃO corta a imagem, NÃO faz zoom */
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -37,8 +37,9 @@
   margin: 0;
 }
 
+/* Botão com cor do logotipo */
 .area-pessoal-btn {
-  background-color: #4caf50;
+  background-color: #00A86B;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -47,10 +48,10 @@
   font-size: 12px;
 }
 
-/* Logotipo centrado */
+/* Logotipo centrado no topo */
 .layout-top-logo {
   position: absolute;
-  top: 18%; /* ajustado para aparecer por cima do vídeo */
+  top: 12%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -58,14 +59,14 @@
 }
 
 .logo-img {
-  width: 80px;
+  width: 90px;
   height: auto;
 }
 
 .logo-title {
   color: white;
-  margin: 5px 0 0 0;
-  font-size: 22px;
+  margin: 6px 0 0 0;
+  font-size: 24px;
 }
 
 .logo-sub {
@@ -74,29 +75,69 @@
   font-size: 12px;
 }
 
-/* Vídeo centrado */
+/* Vídeo centrado entre logotipo e prédios */
 .layout-top-video {
   position: absolute;
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
   width: 50%;
-  max-width: 300px;
+  max-width: 320px;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
+/* Responsivo para tablets e telemóveis */
+@media (max-width: 1024px) {
   .layout-top {
     height: 480px;
   }
 
-  .layout-top-bg {
-    width: 100%;
+  .logo-img {
+    width: 80px;
+  }
+
+  .logo-title {
+    font-size: 20px;
+  }
+
+  .layout-top-video {
+    width: 60%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout-top {
+    height: 420px;
+  }
+
+  .layout-top-overlay {
+    padding: 8px 12px;
+  }
+
+  .condo-text {
+    font-size: 7px;
+  }
+
+  .area-pessoal-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .logo-img {
+    width: 70px;
+  }
+
+  .logo-title {
+    font-size: 18px;
+  }
+
+  .logo-sub {
+    font-size: 11px;
   }
 
   .layout-top-video {
     width: 70%;
-    max-width: 260px;
+    max-width: 280px;
   }
 }

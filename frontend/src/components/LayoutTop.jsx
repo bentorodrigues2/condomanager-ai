@@ -5,7 +5,7 @@ import VideoFrame from "./VideoFrame";
 export default function LayoutTop() {
   return (
     <div className="layout-top">
-      {/* Skyline */}
+      {/* Skyline limpa */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
@@ -28,7 +28,7 @@ export default function LayoutTop() {
         <p className="logo-sub">PWA & Automação Ativa</p>
       </div>
 
-      {/* Vídeo centrado */}
+      {/* Vídeo centrado entre logotipo e skyline */}
       <div className="layout-top-video">
         <VideoFrame />
       </div>
