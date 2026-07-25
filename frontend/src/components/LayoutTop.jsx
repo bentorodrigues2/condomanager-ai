@@ -35,3 +35,4 @@ export function LayoutTopWithVideo() {
     </div>
   );
 }
+
