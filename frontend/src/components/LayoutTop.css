@@ -1,22 +1,23 @@
+/* Container principal da secção */
 .layout-top {
   position: relative;
   width: 100%;
-  height: 300px; /* altura fixa para manter o layout */
+  height: 260px; /* altura fixa para evitar duplicação */
   overflow: hidden;
 }
 
-/* imagem skyline */
+/* Skyline */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantém proporção e cobre o espaço */
+  object-fit: cover; /* mantém proporção */
   z-index: 1;
 }
 
-/* overlay com texto e botões */
+/* Overlay com texto */
 .layout-top-overlay {
   position: relative;
   z-index: 2;
@@ -28,10 +29,7 @@
   color: white;
 }
 
-.layout-top-left h3 {
-  margin: 0;
-}
-
+/* Centro */
 .layout-top-center {
   text-align: center;
 }
@@ -41,6 +39,7 @@
   height: auto;
 }
 
+/* Botão */
 .area-pessoal-btn {
   background-color: #4caf50;
   color: white;
@@ -48,4 +47,27 @@
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .layout-top {
+    height: 200px; /* reduz altura em mobile */
+  }
+
+  .layout-top-overlay {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .layout-top-left,
+  .layout-top-right {
+    display: none; /* remove elementos laterais em mobile */
+  }
+
+  .logo {
+    width: 50px;
+  }
 }

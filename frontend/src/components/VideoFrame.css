@@ -7,7 +7,7 @@
 
 /* wrapper do vídeo */
 .video-wrapper {
-  width: 600px; /* tamanho controlado */
+  width: 600px;
   max-width: 90%;
   border-radius: 12px;
   overflow: hidden;
@@ -17,6 +17,13 @@
 /* vídeo */
 .video-wrapper video {
   width: 100%;
-  height: auto; /* impede que ocupe a página inteira */
+  height: auto;
   display: block;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 90%;
+  }
 }
