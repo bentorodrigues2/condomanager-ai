@@ -1,12 +1,13 @@
+/* Container adaptativo */
 .layout-top {
   position: relative;
   width: 100%;
-  height: 680px; /* altura ajustada para a nova skyline */
+  min-height: 100vh; /* adapta ao ecrã */
   overflow: hidden;
   background-color: #02030a;
 }
 
-/* Skyline adaptativa */
+/* Skyline */
 .layout-top-bg {
   position: absolute;
   top: 0;
@@ -17,7 +18,7 @@
   z-index: 1;
 }
 
-/* Overlay com morada e botão */
+/* Morada + Botão */
 .layout-top-overlay {
   position: absolute;
   top: 0;
@@ -31,12 +32,11 @@
 }
 
 .condo-text {
-  font-size: 8px;
+  font-size: 10px;
   color: white;
   margin: 0;
 }
 
-/* Botão com cor do logotipo */
 .area-pessoal-btn {
   background-color: #00A86B;
   color: white;
@@ -47,10 +47,10 @@
   font-size: 12px;
 }
 
-/* Logotipo centrado no topo */
+/* Logotipo centrado e mais baixo */
 .layout-top-logo {
   position: absolute;
-  top: 8%;
+  top: 14vh; /* desce o logotipo */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -74,10 +74,10 @@
   font-size: 12px;
 }
 
-/* Vídeo centrado entre logotipo e skyline */
+/* Vídeo */
 .layout-top-video {
   position: absolute;
-  top: 50%;
+  top: 52vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -87,10 +87,6 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
-  .layout-top {
-    height: 480px;
-  }
-
   .logo-img {
     width: 70px;
   }
