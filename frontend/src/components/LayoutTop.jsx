@@ -1,12 +1,16 @@
 import React from "react";
 import "./LayoutTop.css";
-import skyline from "../../assets/skyline.png";
 import VideoFrame from "./VideoFrame";
 
 export default function LayoutTop() {
   return (
     <div className="layout-top">
-      <img src={skyline} alt="Skyline" className="layout-top-bg" />
+      {/* Imagem de fundo servida diretamente da pasta public */}
+      <img
+        src="/assets/skyline.png"
+        alt="Skyline"
+        className="layout-top-bg"
+      />
 
       <div className="layout-top-overlay">
         <div className="layout-top-left">
@@ -14,7 +18,7 @@ export default function LayoutTop() {
         </div>
 
         <div className="layout-top-center">
-          <img src="/logo.png" className="logo" />
+          <img src="/logo.png" className="logo" alt="Logo" />
           <h1>CondoManager AI</h1>
           <p>PWA e Automacao Ativa</p>
         </div>
@@ -35,4 +39,3 @@ export function LayoutTopWithVideo() {
     </div>
   );
 }
-

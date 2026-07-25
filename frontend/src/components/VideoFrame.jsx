@@ -6,7 +6,7 @@ export default function VideoFrame() {
     <div className="video-frame">
       <div className="video-wrapper">
         <video
-          src="/intro.mp4"
+          src="/assets/videos/intro.mp4"
           autoPlay
           muted
           loop
@@ -16,4 +16,3 @@ export default function VideoFrame() {
     </div>
   );
 }
-
