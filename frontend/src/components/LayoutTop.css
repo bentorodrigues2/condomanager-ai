@@ -1,48 +1,51 @@
 .layout-top {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 300px; /* altura fixa para manter o layout */
   overflow: hidden;
 }
 
+/* imagem skyline */
 .layout-top-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: brightness(0.55);
+  object-fit: cover; /* mantém proporção e cobre o espaço */
+  z-index: 1;
 }
 
+/* overlay com texto e botões */
 .layout-top-overlay {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 40px;
+  height: 100%;
+  padding: 20px;
   color: white;
+}
+
+.layout-top-left h3 {
+  margin: 0;
 }
 
 .layout-top-center {
   text-align: center;
 }
 
-.area-pessoal-btn {
-  background-color: #00c853;
-  padding: 10px 22px;
-  border-radius: 6px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.video-container {
-  width: 100%;
-  max-height: 480px;
-  overflow: hidden;
-}
-
-.video-container video {
-  width: 100%;
+.logo {
+  width: 60px;
   height: auto;
-  display: block;
+}
+
+.area-pessoal-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
 }

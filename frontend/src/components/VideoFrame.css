@@ -5,17 +5,18 @@
   margin-top: 20px;
 }
 
+/* wrapper do vídeo */
 .video-wrapper {
-  width: 960px;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
+  width: 600px; /* tamanho controlado */
+  max-width: 90%;
   border-radius: 12px;
-  background-color: black;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
+/* vídeo */
 .video-wrapper video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* impede que ocupe a página inteira */
+  display: block;
 }
