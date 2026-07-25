@@ -1,6 +1,7 @@
 import React from "react";
 import "./LayoutTop.css";
 import skyline from "../../assets/skyline.png";
+import VideoFrame from "./VideoFrame";
 
 export default function LayoutTop() {
   return (
@@ -22,10 +23,16 @@ export default function LayoutTop() {
           <button className="area-pessoal-btn">Area Pessoal</button>
         </div>
       </div>
+    </div>
+  );
+}
 
-      <div className="video-container">
-        <video src="/intro.mp4" autoPlay muted loop />
-      </div>
+// Integracao do video abaixo da moldura
+export function LayoutTopWithVideo() {
+  return (
+    <div>
+      <LayoutTop />
+      <VideoFrame />
     </div>
   );
 }
