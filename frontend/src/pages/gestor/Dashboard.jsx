@@ -2,7 +2,7 @@
 import React from 'react';
 import Sidebar from '../../components/Sidebar';
 import Card from '../../components/Card';
-import { useSupabaseTable } from '../../services/useSupabase';
+// import removido automaticamente
 import '../../styles/theme.css';
 
 export default function DashboardGestor() {

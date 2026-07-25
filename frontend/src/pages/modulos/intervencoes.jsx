@@ -5,7 +5,7 @@ import Card from '../../components/Card';
 import Table from '../../components/Table';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { useSupabaseTable } from '../../services/useSupabase';
+// import removido automaticamente
 
 export default function Intervencoes() {
   const { data, insert } = useSupabaseTable('intervencoes');

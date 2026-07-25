@@ -3,7 +3,7 @@ import React from 'react';
 import Sidebar from '../../components/Sidebar';
 import Card from '../../components/Card';
 import Table from '../../components/Table';
-import { useSupabaseTable } from '../../services/useSupabase';
+// import removido automaticamente
 
 export default function Limpezas() {
   const { data } = useSupabaseTable('limpezas');

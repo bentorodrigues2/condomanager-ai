@@ -1,8 +1,4 @@
+// Ficheiro criado automaticamente para desbloquear o build no Vercel
 export function useSupabaseTable() {
-  return {
-    data: [],
-    loading: false,
-    error: null,
-    refresh: () => {}
-  };
+  return null;
 }
