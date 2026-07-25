@@ -2,28 +2,35 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
 }
 
-/* wrapper do vídeo */
 .video-wrapper {
-  width: 600px;
-  max-width: 90%;
+  width: 100%; /* usa a largura definida no LayoutTop.css */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0,0,0,0.3);
 }
 
-/* vídeo */
 .video-wrapper video {
   width: 100%;
   height: auto;
   display: block;
 }
+.video-frame {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .video-wrapper {
-    width: 90%;
-  }
+.video-wrapper {
+  width: 100%; /* usa a largura definida no LayoutTop.css */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
