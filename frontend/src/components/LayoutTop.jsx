@@ -23,7 +23,7 @@ export default function LayoutTop() {
 
       {/* Logotipo centrado */}
       <div className="layout-top-logo">
-        <img src="/logo.png" alt="Logo" className="logo-img" />
+        <img src="/assets/logo.png" alt="Logo" className="logo-img" />
         <h1 className="logo-title">CondoManager AI</h1>
         <p className="logo-sub">PWA & Automação Ativa</p>
       </div>

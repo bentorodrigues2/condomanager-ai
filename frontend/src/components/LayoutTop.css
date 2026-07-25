@@ -6,16 +6,15 @@
   overflow: hidden;
 }
 
-/* Skyline responsiva */
+/* Skyline sem zoom, centrada e responsiva */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* centra a imagem */
-  width: 1400px; /* largura fixa para evitar esticar */
-  max-width: none;
+  transform: translateX(-50%);
+  width: 100%;        /* usa a largura do ecrã */
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* NÃO corta a imagem, NÃO faz zoom */
   z-index: 1;
 }
 
@@ -51,7 +50,7 @@
 /* Logotipo centrado */
 .layout-top-logo {
   position: absolute;
-  top: 22%;
+  top: 18%; /* ajustado para aparecer por cima do vídeo */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -93,7 +92,7 @@
   }
 
   .layout-top-bg {
-    width: 1000px;
+    width: 100%;
   }
 
   .layout-top-video {
