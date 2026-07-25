@@ -1,53 +1,3 @@
-/* Container adaptativo */
-.layout-top {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: #02030a;
-}
-
-/* Skyline */
-.layout-top-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* Morada + Botão */
-.layout-top-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 20px;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.condo-text {
-  font-size: 10px;
-  color: white;
-  margin: 0;
-}
-
-.area-pessoal-btn {
-  background-color: #00A86B;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* Logotipo centrado e mais baixo */
 .layout-top-logo {
   position: absolute;
   top: 14vh;
@@ -55,52 +5,16 @@
   transform: translateX(-50%);
   text-align: center;
   z-index: 4;
+
+  /* Destaque para o logotipo sobre a skyline */
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .logo-img {
   width: 90px;
   height: auto;
-}
-
-.logo-title {
-  color: white;
-  margin: 6px 0 0 0;
-  font-size: 24px;
-}
-
-.logo-sub {
-  color: white;
-  margin: 0;
-  font-size: 12px;
-}
-
-/* Vídeo */
-.layout-top-video {
-  position: absolute;
-  top: 52vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
-  width: 50%;
-  max-width: 320px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .logo-img {
-    width: 70px;
-  }
-
-  .logo-title {
-    font-size: 18px;
-  }
-
-  .logo-sub {
-    font-size: 11px;
-  }
-
-  .layout-top-video {
-    width: 70%;
-    max-width: 280px;
-  }
 }
