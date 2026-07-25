@@ -5,14 +5,14 @@ import VideoFrame from "./VideoFrame";
 export default function LayoutTop() {
   return (
     <div className="layout-top">
-      {/* Skyline limpa */}
+      {/* Skyline final */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
         className="layout-top-bg"
       />
 
-      {/* Texto e botão */}
+      {/* Overlay com morada e botão */}
       <div className="layout-top-overlay">
         <p className="condo-text">
           Condominio - R. Bento Rodrigues 2, Aldeia de Paio Pires
@@ -21,7 +21,7 @@ export default function LayoutTop() {
         <button className="area-pessoal-btn">Área Pessoal</button>
       </div>
 
-      {/* Logotipo centrado */}
+      {/* Logotipo centrado no topo */}
       <div className="layout-top-logo">
         <img src="/assets/logo.png" alt="Logo" className="logo-img" />
         <h1 className="logo-title">CondoManager AI</h1>

@@ -1,13 +1,12 @@
-/* Container principal */
 .layout-top {
   position: relative;
   width: 100%;
-  height: 520px;
+  height: 680px; /* altura ajustada para a nova skyline */
   overflow: hidden;
-  background-color: #02030a; /* fundo escuro */
+  background-color: #02030a;
 }
 
-/* Skyline limpa e adaptativa */
+/* Skyline adaptativa */
 .layout-top-bg {
   position: absolute;
   top: 0;
@@ -18,7 +17,7 @@
   z-index: 1;
 }
 
-/* Overlay com texto e botão */
+/* Overlay com morada e botão */
 .layout-top-overlay {
   position: absolute;
   top: 0;
@@ -51,7 +50,7 @@
 /* Logotipo centrado no topo */
 .layout-top-logo {
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -75,10 +74,10 @@
   font-size: 12px;
 }
 
-/* Vídeo centrado entre logotipo e prédios */
+/* Vídeo centrado entre logotipo e skyline */
 .layout-top-video {
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
@@ -86,42 +85,10 @@
   max-width: 320px;
 }
 
-/* Responsivo para tablets e telemóveis */
-@media (max-width: 1024px) {
-  .layout-top {
-    height: 480px;
-  }
-
-  .logo-img {
-    width: 80px;
-  }
-
-  .logo-title {
-    font-size: 20px;
-  }
-
-  .layout-top-video {
-    width: 60%;
-    max-width: 300px;
-  }
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
   .layout-top {
-    height: 420px;
-  }
-
-  .layout-top-overlay {
-    padding: 8px 12px;
-  }
-
-  .condo-text {
-    font-size: 7px;
-  }
-
-  .area-pessoal-btn {
-    font-size: 10px;
-    padding: 5px 10px;
+    height: 480px;
   }
 
   .logo-img {
