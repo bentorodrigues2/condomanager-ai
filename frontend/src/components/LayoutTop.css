@@ -2,18 +2,20 @@
 .layout-top {
   position: relative;
   width: 100%;
-  height: 480px; /* altura aumentada para mostrar a skyline inteira */
+  height: 520px; /* altura ajustada para skyline + logotipo + vídeo */
   overflow: hidden;
 }
 
-/* Skyline */
+/* Skyline responsiva */
 .layout-top-bg {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* centra a imagem */
+  width: 1400px; /* largura fixa para evitar esticar */
+  max-width: none;
   height: 100%;
-  object-fit: cover; /* mantém proporção sem cortar */
+  object-fit: cover;
   z-index: 1;
 }
 
@@ -30,14 +32,12 @@
   align-items: center;
 }
 
-/* Texto pequeno */
 .condo-text {
   font-size: 8px;
   color: white;
   margin: 0;
 }
 
-/* Botão */
 .area-pessoal-btn {
   background-color: #4caf50;
   color: white;
@@ -48,30 +48,52 @@
   font-size: 12px;
 }
 
-/* Vídeo centrado sobre a skyline */
+/* Logotipo centrado */
+.layout-top-logo {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+}
+
+.logo-title {
+  color: white;
+  margin: 5px 0 0 0;
+  font-size: 22px;
+}
+
+.logo-sub {
+  color: white;
+  margin: 0;
+  font-size: 12px;
+}
+
+/* Vídeo centrado */
 .layout-top-video {
   position: absolute;
-  top: 55%; /* centrado visualmente */
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
-  width: 50%; /* vídeo metade do tamanho */
-  max-width: 300px; /* limite máximo */
+  width: 50%;
+  max-width: 300px;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
   .layout-top {
-    height: 380px;
+    height: 480px;
   }
 
-  .condo-text {
-    font-size: 7px;
-  }
-
-  .area-pessoal-btn {
-    font-size: 10px;
-    padding: 5px 10px;
+  .layout-top-bg {
+    width: 1000px;
   }
 
   .layout-top-video {
