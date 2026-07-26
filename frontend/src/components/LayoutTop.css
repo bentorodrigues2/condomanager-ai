@@ -1,3 +1,4 @@
+/* Container principal do topo */
 .layout-top {
   position: relative;
   width: 100%;
@@ -5,6 +6,7 @@
   overflow: hidden;
 }
 
+/* Skyline a preencher o topo */
 .layout-top-bg {
   position: absolute;
   top: 0;
@@ -16,6 +18,7 @@
   z-index: 1;
 }
 
+/* Logotipo */
 .layout-top-logo {
   position: absolute;
   top: 10vh;
@@ -29,6 +32,7 @@
   height: auto;
 }
 
+/* Vídeo centrado */
 .layout-top-video {
   position: absolute;
   top: 60%;
