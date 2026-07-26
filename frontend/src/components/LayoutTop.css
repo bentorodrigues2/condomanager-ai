@@ -7,13 +7,13 @@
   background-color: #02030a;
 }
 
-/* Skyline com -15% de zoom */
+/* Skyline com -15% de zoom e deslocada para baixo */
 .layout-top-bg {
   position: absolute;
-  top: 0;
+  top: -15vh;      /* ← empurra a imagem para baixo */
   left: 0;
   width: 100%;
-  height: 85vh;       /* ← 15% menos zoom */
+  height: 85vh;    /* ← zoom reduzido em 15% */
   object-fit: cover;
   z-index: 1;
 }
