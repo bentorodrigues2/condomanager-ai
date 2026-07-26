@@ -5,14 +5,12 @@ export default function LayoutTop() {
   return (
     <div className="layout-top">
 
-      {/* Skyline original */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
         className="layout-top-bg"
       />
 
-      {/* Logotipo original */}
       <div className="layout-top-logo">
         <img
           src="/assets/logo.png"
@@ -21,7 +19,6 @@ export default function LayoutTop() {
         />
       </div>
 
-      {/* Vídeo original centrado */}
       <div className="layout-top-video">
         <video
           src="/assets/videos/intro.mp4"
