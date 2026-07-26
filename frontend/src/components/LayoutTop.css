@@ -6,19 +6,19 @@
   overflow: hidden;
 }
 
-/* Imagem de fundo (layout) — versão original sem zoom extra */
+/* Imagem de fundo (layout) — versão original com height aumentado para 110% */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;   /* valor original */
-  height: 100%;  /* valor original */
-  object-fit: cover; /* comportamento original */
+  width: 110%;   /* valor original */
+  height: 110%;  /* aumentado para eliminar barra branca */
+  object-fit: cover;
   z-index: 1;
 }
 
-/* Container do logotipo — limpo, sem imagem */
+/* Container do logotipo — limpo */
 .layout-top-logo {
   position: absolute;
   top: 14vh;
