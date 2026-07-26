@@ -7,13 +7,13 @@
   background-color: #02030a;
 }
 
-/* Skyline com -15% de zoom e deslocada para baixo */
+/* Skyline ajustada para eliminar barra preta */
 .layout-top-bg {
   position: absolute;
-  top: -15vh;      /* ← empurra a imagem para baixo */
+  top: -5vh;        /* deslocamento calibrado */
   left: 0;
   width: 100%;
-  height: 85vh;    /* ← zoom reduzido em 15% */
+  height: 95vh;     /* altura aumentada para cobrir o ecrã */
   object-fit: cover;
   z-index: 1;
 }
@@ -47,6 +47,21 @@
   font-size: 12px;
 }
 
+/* Logotipo */
+.layout-top-logo {
+  position: absolute;
+  top: 14vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4;
+}
+
+.logo-img {
+  width: 120px;   /* ajustável */
+  height: auto;
+}
+
 /* Vídeo */
 .layout-top-video {
   position: absolute;
@@ -60,6 +75,10 @@
 
 /* Responsivo */
 @media (max-width: 768px) {
+  .logo-img {
+    width: 90px;
+  }
+
   .layout-top-video {
     width: 70%;
     max-width: 280px;
