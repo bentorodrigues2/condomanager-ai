@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-/* Imagem de fundo (skyline) */
+/* Skyline original a preencher o topo */
 .layout-top-bg {
   position: absolute;
   top: 0;
@@ -18,13 +18,12 @@
   z-index: 1;
 }
 
-/* Logotipo */
+/* Logotipo original */
 .layout-top-logo {
   position: absolute;
   top: 10vh;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
   z-index: 4;
 }
 
@@ -33,7 +32,7 @@
   height: auto;
 }
 
-/* Vídeo de introdução */
+/* Vídeo original centrado */
 .layout-top-video {
   position: absolute;
   top: 60%;
