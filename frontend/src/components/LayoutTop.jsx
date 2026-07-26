@@ -26,6 +26,15 @@ export default function LayoutTop() {
         </button>
       </div>
 
+      {/* Logotipo */}
+      <div className="layout-top-logo">
+        <img
+          src="/assets/Logo.png"
+          alt="Logo"
+          className="logo-img"
+        />
+      </div>
+
       {/* Vídeo */}
       <div className="layout-top-video">
         <VideoFrame />
