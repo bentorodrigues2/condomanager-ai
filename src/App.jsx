@@ -1,3 +1,5 @@
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 import { useEffect } from "react";
 import AppRouter from "./router";
 import { AuthProvider } from "./auth/AuthContext";

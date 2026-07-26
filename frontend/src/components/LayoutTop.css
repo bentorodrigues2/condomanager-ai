@@ -1,14 +1,16 @@
-/* Container adaptativo */
-.layout-top {
+/* ================================
+   LAYOUT TOP — ESTILOS PRINCIPAIS
+   ================================ */
+
+.layout-top-container {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 115vh;
   overflow: hidden;
-  background-color: #02030a;
 }
 
-/* Skyline ajustada para eliminar barra preta */
-.layout-top-bg {
+/* SKYLINE */
+.skyline-img {
   position: absolute;
   top: -15vh;
   left: 0;
@@ -18,69 +20,73 @@
   z-index: 1;
 }
 
-/* Morada + Botão */
-.layout-top-overlay {
+/* LOGOTIPO */
+.logo-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 20px;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.condo-text {
-  font-size: 10px;
-  color: white;
-  margin: 0;
-}
-
-.area-pessoal-btn {
-  background-color: #00A86B;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* Logotipo — corrigido para Chrome e Edge */
-.layout-top-logo {
-  position: absolute;
-  top: 0vh;        /* ← valor que funciona nos dois navegadores */
+  top: 0vh;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  z-index: 4;
+  width: 550px;
+  z-index: 3;
 }
 
-.logo-img {
-  width: 550px;    /* destaque principal */
-  height: auto;
-}
-
-/* Vídeo */
-.layout-top-video {
+/* VIDEO */
+.video-frame {
   position: absolute;
   top: 52vh;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 4;
+  transform: translateX(-50%);
   width: 50%;
   max-width: 320px;
+  z-index: 4;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .logo-img {
-    width: 300px;
-  }
+/* OVERLAY */
+.overlay-info {
+  position: absolute;
+  bottom: 4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
 
-  .layout-top-video {
-    width: 70%;
-    max-width: 280px;
-  }
+/* ================================
+   BOTÃO ÁREA PESSOAL
+   ================================ */
+
+.area-pessoal-btn {
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  z-index: 6;
+}
+
+/* MOVIMENTO AO APROXIMAR O RATO */
+.area-pessoal-btn:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+/* ================================
+   BOTÃO EFETUAR MOVIMENTO
+   ================================ */
+
+.movimento-btn {
+  background-color: #008f5a;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 6;
 }
