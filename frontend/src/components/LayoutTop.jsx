@@ -5,7 +5,7 @@ export default function LayoutTop() {
   return (
     <div className="layout-top">
 
-      {/* Imagem de fundo original (skyline) */}
+      {/* Skyline original */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
