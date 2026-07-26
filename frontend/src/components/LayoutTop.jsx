@@ -26,13 +26,6 @@ export default function LayoutTop() {
         </button>
       </div>
 
-      {/* Logotipo */}
-      <div className="layout-top-logo">
-        <img src="/assets/logo.png" alt="Logo" className="logo-img" />
-        <h1 className="logo-title">CondoManager AI</h1>
-        <p className="logo-sub">PWA & Automação Ativa</p>
-      </div>
-
       {/* Vídeo */}
       <div className="layout-top-video">
         <VideoFrame />
