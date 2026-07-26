@@ -1,36 +1,42 @@
 import React from "react";
 import "./LayoutTop.css";
+import VideoFrame from "./VideoFrame";
 
 export default function LayoutTop() {
   return (
     <div className="layout-top">
-
-      {/* Imagem de fundo (skyline) */}
+      {/* Skyline */}
       <img
         src="/assets/skyline.png"
         alt="Skyline"
         className="layout-top-bg"
       />
 
+      {/* Morada + Botão */}
+      <div className="layout-top-overlay">
+        <p className="condo-text">
+          Condominio - R. Bento Rodrigues 2, Aldeia de Paio Pires
+        </p>
+
+        <button
+          className="area-pessoal-btn"
+          onClick={() => (window.location.href = "/login")}
+        >
+          Área Pessoal
+        </button>
+      </div>
+
       {/* Logotipo */}
       <div className="layout-top-logo">
-        <img
-          src="/assets/logo.png"
-          alt="Logo"
-          className="logo-img"
-        />
+        <img src="/assets/logo.png" alt="Logo" className="logo-img" />
+        <h1 className="logo-title">CondoManager AI</h1>
+        <p className="logo-sub">PWA & Automação Ativa</p>
       </div>
 
-      {/* Vídeo de introdução */}
+      {/* Vídeo */}
       <div className="layout-top-video">
-        <video
-          src="/assets/videos/intro.mp4"
-          autoPlay
-          loop
-          muted
-        />
+        <VideoFrame />
       </div>
-
     </div>
   );
 }
