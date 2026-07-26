@@ -6,19 +6,19 @@
   overflow: hidden;
 }
 
-/* Imagem de fundo (skyline) com apenas -5% de zoom */
+/* Imagem de fundo (layout) — versão original sem zoom extra */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 105%;   /* antes 110% — agora só -5% de zoom */
-  height: 105%;  /* mantém proporção */
-  object-fit: cover; /* mantém o comportamento original */
+  width: 100%;   /* valor original */
+  height: 100%;  /* valor original */
+  object-fit: cover; /* comportamento original */
   z-index: 1;
 }
 
-/* Logotipo removido — container limpo */
+/* Container do logotipo — limpo, sem imagem */
 .layout-top-logo {
   position: absolute;
   top: 14vh;
@@ -28,13 +28,7 @@
   z-index: 4;
 }
 
-/* Mantém caso coloques o novo logotipo transparente */
-.logo-img {
-  width: 90px;
-  height: auto;
-}
-
-/* Vídeo exatamente como estava no layout original */
+/* Vídeo no sítio original */
 .layout-top-video {
   position: absolute;
   top: 60%;
