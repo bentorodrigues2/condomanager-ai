@@ -47,7 +47,7 @@
   font-size: 12px;
 }
 
-/* Logotipo — agora destaque da página */
+/* Logotipo — agora destaque absoluto */
 .layout-top-logo {
   position: absolute;
   top: 14vh;
@@ -58,7 +58,7 @@
 }
 
 .logo-img {
-  width: 300px;   /* ← destaque principal */
+  width: 500px;   /* ← destaque principal */
   height: auto;
 }
 
@@ -76,7 +76,7 @@
 /* Responsivo */
 @media (max-width: 768px) {
   .logo-img {
-    width: 180px;
+    width: 250px;
   }
 
   .layout-top-video {
