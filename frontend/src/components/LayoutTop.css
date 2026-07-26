@@ -2,26 +2,26 @@
 .layout-top {
   position: relative;
   width: 100%;
-  height: 520px; /* valor original */
-  overflow: hidden;
+  height: 520px; /* altura fixa do layout */
+  overflow: hidden; /* impede scroll */
 }
 
-/* Imagem de fundo (layout) — agora a 95% para eliminar barra branca */
+/* Imagem de fundo (layout) — 100% é o valor correto */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 110%;    /* reduzido para eliminar barra branca */
-  height: 120%;   /* reduzido para eliminar barra branca */
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre o container sem distorcer */
   z-index: 1;
 }
 
 /* Logotipo novo aplicado no topo */
 .layout-top-logo {
   position: absolute;
-  top: 10vh; /* ligeiramente acima do vídeo */
+  top: 10vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -30,7 +30,7 @@
 
 /* Tamanho do logotipo novo */
 .logo-img {
-  width: 140px;   /* tamanho ideal para o layout */
+  width: 140px;
   height: auto;
 }
 
