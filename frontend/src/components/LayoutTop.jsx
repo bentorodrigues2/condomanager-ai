@@ -26,7 +26,7 @@ export default function LayoutTop() {
         </button>
       </div>
 
-      {/* Logotipo — agora com 500px */}
+      {/* Logotipo */}
       <div className="layout-top-logo">
         <img
           src="/assets/Logo.png"

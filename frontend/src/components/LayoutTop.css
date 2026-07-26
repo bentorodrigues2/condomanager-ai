@@ -47,10 +47,10 @@
   font-size: 12px;
 }
 
-/* Logotipo — agora destaque absoluto */
+/* Logotipo — corrigido para Chrome */
 .layout-top-logo {
   position: absolute;
-  top: 14vh;
+  top: 8vh;        /* ← antes 14vh */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -58,7 +58,7 @@
 }
 
 .logo-img {
-  width: 500px;   /* ← destaque principal */
+  width: 600px;    /* destaque principal */
   height: auto;
 }
 
