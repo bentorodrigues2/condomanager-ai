@@ -5,9 +5,9 @@ export default function LayoutTop() {
   return (
     <div className="layout-top">
 
-      {/* Imagem de fundo (layout) */}
+      {/* Imagem de fundo do layout */}
       <img
-        src="/layout.png"
+        src="/assets/layout.png"
         alt="Layout"
         className="layout-top-bg"
       />

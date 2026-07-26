@@ -6,7 +6,7 @@
   overflow: hidden; /* impede scroll */
 }
 
-/* Imagem de fundo (layout) — 100% é o valor correto */
+/* Imagem de fundo do layout */
 .layout-top-bg {
   position: absolute;
   top: 0;
@@ -18,7 +18,7 @@
   z-index: 1;
 }
 
-/* Logotipo novo aplicado no topo */
+/* Logotipo novo */
 .layout-top-logo {
   position: absolute;
   top: 10vh;
@@ -28,13 +28,13 @@
   z-index: 4;
 }
 
-/* Tamanho do logotipo novo */
+/* Tamanho do logotipo */
 .logo-img {
   width: 140px;
   height: auto;
 }
 
-/* Vídeo no sítio original */
+/* Vídeo */
 .layout-top-video {
   position: absolute;
   top: 60%;
