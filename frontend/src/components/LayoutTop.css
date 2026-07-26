@@ -12,20 +12,26 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 95%;    /* reduzido para eliminar barra branca */
-  height: 95%;   /* reduzido para eliminar barra branca */
+  width: 110%;    /* reduzido para eliminar barra branca */
+  height: 120%;   /* reduzido para eliminar barra branca */
   object-fit: cover;
   z-index: 1;
 }
 
-/* Container do logotipo — limpo */
+/* Logotipo novo aplicado no topo */
 .layout-top-logo {
   position: absolute;
-  top: 14vh;
+  top: 10vh; /* ligeiramente acima do vídeo */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 4;
+}
+
+/* Tamanho do logotipo novo */
+.logo-img {
+  width: 140px;   /* tamanho ideal para o layout */
+  height: auto;
 }
 
 /* Vídeo no sítio original */
