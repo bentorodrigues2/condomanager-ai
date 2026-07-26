@@ -47,10 +47,10 @@
   font-size: 12px;
 }
 
-/* Logotipo — corrigido para Chrome */
+/* Logotipo — corrigido para Chrome e Edge */
 .layout-top-logo {
   position: absolute;
-  top: 8vh;        /* ← antes 14vh */
+  top: 0vh;        /* ← valor que funciona nos dois navegadores */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -58,7 +58,7 @@
 }
 
 .logo-img {
-  width: 600px;    /* destaque principal */
+  width: 550px;    /* destaque principal */
   height: auto;
 }
 
@@ -76,7 +76,7 @@
 /* Responsivo */
 @media (max-width: 768px) {
   .logo-img {
-    width: 250px;
+    width: 300px;
   }
 
   .layout-top-video {
