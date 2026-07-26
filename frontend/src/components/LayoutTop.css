@@ -6,14 +6,14 @@
   overflow: hidden;
 }
 
-/* Imagem de fundo (layout) — versão original com height aumentado para 110% */
+/* Imagem de fundo (layout) — agora a 95% para eliminar barra branca */
 .layout-top-bg {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 110%;   /* valor original */
-  height: 110%;  /* aumentado para eliminar barra branca */
+  width: 95%;    /* reduzido para eliminar barra branca */
+  height: 95%;   /* reduzido para eliminar barra branca */
   object-fit: cover;
   z-index: 1;
 }
