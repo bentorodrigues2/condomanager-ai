@@ -1,7 +1,3 @@
-/* ================================
-   LAYOUT TOP — ESTILOS PRINCIPAIS
-   ================================ */
-
 .layout-top-container {
   position: relative;
   width: 100%;
@@ -9,7 +5,6 @@
   overflow: hidden;
 }
 
-/* SKYLINE */
 .skyline-img {
   position: absolute;
   top: -15vh;
@@ -20,7 +15,6 @@
   z-index: 1;
 }
 
-/* LOGOTIPO */
 .logo-img {
   position: absolute;
   top: 0vh;
@@ -30,7 +24,6 @@
   z-index: 3;
 }
 
-/* VIDEO */
 .video-frame {
   position: absolute;
   top: 52vh;
@@ -41,7 +34,6 @@
   z-index: 4;
 }
 
-/* OVERLAY */
 .overlay-info {
   position: absolute;
   bottom: 4vh;
@@ -52,36 +44,21 @@
   z-index: 5;
 }
 
-/* ================================
-   BOTÃO ÁREA PESSOAL
-   ================================ */
-
-.area-pessoal-btn {
-  background-color: #ffffff;
-  color: #333;
+.movimento-btn {
+  background-color: #008f5a;
+  color: white;
   padding: 12px 26px;
   border-radius: 8px;
   border: none;
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   z-index: 6;
 }
 
-/* MOVIMENTO AO APROXIMAR O RATO */
-.area-pessoal-btn:hover {
-  transform: translateY(-4px) scale(1.06);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
-}
-
-/* ================================
-   BOTÃO EFETUAR MOVIMENTO
-   ================================ */
-
-.movimento-btn {
-  background-color: #008f5a;
-  color: white;
+.area-pessoal-btn {
+  background-color: #ffffff;
+  color: #333;
   padding: 12px 26px;
   border-radius: 8px;
   border: none;
