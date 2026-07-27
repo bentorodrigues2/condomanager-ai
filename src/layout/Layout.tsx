@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../ui/layout/Sidebar.jsx";
 
 export default function Layout({ children }) {
   console.log("✅ Layout renderizado — a mostrar conteúdo interno.");

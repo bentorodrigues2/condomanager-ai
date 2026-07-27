@@ -1,5 +1,5 @@
 
-import { supabase } from "../supabase/supabaseClient";
+import { supabase } from "../supabaseClient.ts";
 
 export async function get_pagamentos() {
     const { data, error } = await supabase

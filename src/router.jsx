@@ -10,7 +10,6 @@ import ContabilidadeDashboard from "./dashboards/contabilidade";
 
 import ProtectedRoute from "./auth/ProtectedRoute";
 
-import * as CRUD from "./pages/crud";
 
 export default function AppRouter() {
     return (

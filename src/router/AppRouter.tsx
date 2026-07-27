@@ -68,8 +68,6 @@ import Animais from "../pages/Animais";
 import AnimalForm from "../pages/AnimalForm";
 
 /* ARRECADACOES / GARAGENS */
-import Arrecadacoes from "../pages/Arrecadacoes";
-import ArrecadacaoForm from "../pages/ArrecadacaoForm";
 
 /* INCIDENTES / OCORRÊNCIAS */
 import Incidentes from "../pages/Incidentes";
