@@ -1,4 +1,0 @@
-
-Execute no terminal:
-
-npm install chart.js
