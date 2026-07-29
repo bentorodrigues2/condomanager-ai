@@ -1,19 +1,23 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import ContabilidadeDashboard from "./pages/ContabilidadeDashboard.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import ContabilidadeDashboard from "./pages/ContabilidadeDashboard";
 
-export default function AppRouter() {
+function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* Dashboard principal */}
-        <Route path="/" element={<Dashboard />} />
-
-        {/* Contabilidade */}
+        <Route path="/" element={<Login />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/contabilidade"
           element={
@@ -22,11 +26,9 @@ export default function AppRouter() {
             </ProtectedRoute>
           }
         />
-
-        {/* Página 404 */}
-        <Route path="*" element={<div style={{ padding: "2rem" }}>Página não encontrada</div>} />
-
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default AppRouter;
