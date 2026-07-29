@@ -1,7 +1,5 @@
-import Dashboard from "./pages/Dashboard.tsx";
-import Login from "./pages/Login.jsx";
 import { useEffect } from "react";
-import AppRouter from "./router.jsx";
+import { AppRouter } from "./router/AppRouter";     // ✔️ Router correto
 import { AuthProvider } from "./auth/AuthContext";
 import Layout from "./ui/layout/Layout";
 
@@ -61,7 +59,7 @@ export default function App() {
     return (
         <AuthProvider>
             <Layout>
-                <AppRouter />
+                <AppRouter />     {/* ✔️ Router correto montado aqui */}
             </Layout>
         </AuthProvider>
     );

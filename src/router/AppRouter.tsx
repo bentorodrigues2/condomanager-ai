@@ -1,225 +1,116 @@
-﻿import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { ProtectedRoute } from "../components/auth/ProtectedRoute";
+import AppLayout from "../layout/AppLayout";
 
-/* PRINCIPAL */
-import Dashboard from "../pages/Dashboard";
+/* ================================
+   IMPORTS DE PÁGINAS PRINCIPAIS
+   ================================ */
+import { Dashboard } from "../pages/Dashboard";
+import { Condominios } from "../pages/condominios/Condominios";
+import { Financeiro } from "../pages/financeiro/Financeiro";
+import { Manutencao } from "../pages/manutencao/Manutencao";
+import { Unidades } from "../pages/unidades/Unidades";
+import { Configuracoes } from "../pages/configuracoes/Configuracoes";
 
-/* PRÉDIOS */
-import Predios from "../pages/Predios";
-import PredioForm from "../pages/PredioForm";
+/* ================================
+   IMPORTS DE AUTENTICAÇÃO
+   ================================ */
+import { Login } from "../pages/auth/Login";
+import { Recover } from "../pages/auth/Recover";
+import { Register } from "../pages/auth/Register";
 
-/* FRAÇÕES */
-import Fracoes from "../pages/Fracoes";
-import FractionsList from "../pages/FractionsList";
-import FractionForm from "../pages/FractionForm";
-import OwnersForm from "../pages/OwnersForm";
-import TenantsForm from "../pages/TenantsForm";
+/* ================================
+   IMPORTS DE SUBPÁGINAS
+   ================================ */
 
-/* CONDÓMINOS */
-import Condominos from "../pages/Condominos";
-import CondominoForm from "../pages/CondominoForm";
+/* Condominios */
+import { GestaoPredios } from "../pages/condominios/GestaoPredios";
+import { GestaoRelatorios } from "../pages/condominios/GestaoRelatorios";
+import { GestaoReservas } from "../pages/condominios/GestaoReservas";
+import { MultiCondominio } from "../pages/condominios/MultiCondominio";
+import { PortalOrcamentos } from "../pages/condominios/PortalOrcamentos";
+import { GestaoDocumentos } from "../pages/condominios/GestaoDocumentos";
+import { GestaoAssembleias } from "../pages/condominios/GestaoAssembleias";
 
-/* PAGAMENTOS */
-import Pagamentos from "../pages/Pagamentos";
-import PagamentoForm from "../pages/PagamentoForm";
+/* Financeiro */
+import { GestaoContas } from "../pages/financeiro/GestaoContas";
+import { GestaoMovimentos } from "../pages/financeiro/GestaoMovimentos";
+import { GestaoEmissao } from "../pages/financeiro/GestaoEmissao";
+import { GestaoFundoReserva } from "../pages/financeiro/GestaoFundoReserva";
 
-/* OBRAS */
-import Obras from "../pages/Obras";
-import ObraForm from "../pages/ObraForm";
+/* Manutenção */
+import { GestaoManutencaoIntervencoes } from "../pages/manutencao/GestaoManutencaoIntervencoes";
+import { GestaoVistoriasLimpezas } from "../pages/manutencao/GestaoVistoriasLimpezas";
 
-/* LIMPEZAS */
-import Limpezas from "../pages/Limpezas";
-import LimpezaForm from "../pages/LimpezaForm";
+/* Unidades */
+import { GestaoFracoes } from "../pages/unidades/GestaoFracoes";
 
-/* DOCUMENTOS */
-import Documentos from "../pages/Documentos";
-import DocumentoForm from "../pages/DocumentoForm";
+/* IA */
+import { IAavancada } from "../pages/ia/IAavancada";
 
-/* EXPORTAÇÕES */
-import Exportacoes from "../pages/Exportacoes";
-import ExportacaoForm from "../pages/ExportacaoForm";
+/* Layout / Simulador */
+import { PWASimulator } from "../pages/layout/PWASimulator";
 
-/* FORNECEDORES */
-import Fornecedores from "../pages/Fornecedores";
-import FornecedorForm from "../pages/FornecedorForm";
-
-/* AVISOS */
-import Avisos from "../pages/Avisos";
-import AvisoForm from "../pages/AvisoForm";
-
-/* REUNIÕES */
-import Reunioes from "../pages/Reunioes";
-import ReuniaoForm from "../pages/ReuniaoForm";
-
-/* TAREFAS */
-import Tarefas from "../pages/Tarefas";
-import TarefaForm from "../pages/TarefaForm";
-
-/* VEÍCULOS */
-import Veiculos from "../pages/Veiculos";
-import VeiculoForm from "../pages/VeiculoForm";
-
-/* CHAVES */
-import Chaves from "../pages/Chaves";
-import ChaveForm from "../pages/ChaveForm";
-
-/* ANIMAIS */
-import Animais from "../pages/Animais";
-import AnimalForm from "../pages/AnimalForm";
-
-/* ARRECADACOES / GARAGENS */
-
-/* INCIDENTES / OCORRÊNCIAS */
-import Incidentes from "../pages/Incidentes";
-import IncidenteForm from "../pages/IncidenteForm";
-
-/* RESERVAS DE ESPAÇOS */
-import Reservas from "../pages/Reservas";
-import ReservaForm from "../pages/ReservaForm";
-
-/* CONTRATOS */
-import Contratos from "../pages/Contratos";
-import ContratoForm from "../pages/ContratoForm";
-
-/* SEGUROS / APÓLICES */
-import Seguros from "../pages/Seguros";
-import SeguroForm from "../pages/SeguroForm";
-
-/* INVENTÁRIO / EQUIPAMENTOS */
-import Inventario from "../pages/Inventario";
-import InventarioForm from "../pages/InventarioForm";
-
-/* MENSAGENS INTERNAS / CHAT */
-import Mensagens from "../pages/Mensagens";
-import MensagemForm from "../pages/MensagemForm";
-
-/* UTILIZADORES / ADMINISTRAÇÃO */
-import Utilizadores from "../pages/Utilizadores";
-import UtilizadorForm from "../pages/UtilizadorForm";
-
-export default function AppRouter() {
+export function AppRouter() {
   return (
-    <Routes>
-      {/* PRINCIPAL */}
-      <Route path="/" element={<Dashboard />} />
+    <BrowserRouter>
+      <Routes>
+        {/* Rotas públicas */}
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/auth/register" element={<Register />} />
+        <Route path="/auth/recover" element={<Recover />} />
 
-      {/* PRÉDIOS */}
-      <Route path="/predios" element={<Predios />} />
-      <Route path="/predios/novo" element={<PredioForm />} />
-      <Route path="/predios/:id" element={<PredioForm />} />
+        {/* Rotas protegidas */}
+        <Route
+          path="*"
+          element={
+            <ProtectedRoute>
+              <AppLayout>
+                <Routes>
+                  {/* Principais */}
+                  <Route path="/" element={<Dashboard />} />
+                  <Route path="/condominios" element={<Condominios />} />
+                  <Route path="/financeiro" element={<Financeiro />} />
+                  <Route path="/manutencao" element={<Manutencao />} />
+                  <Route path="/unidades" element={<Unidades />} />
+                  <Route path="/configuracoes" element={<Configuracoes />} />
 
-      {/* FRAÇÕES */}
-      <Route path="/fracoes" element={<Fracoes />} />
-      <Route path="/buildings/:buildingId/fractions" element={<FractionsList />} />
-      <Route path="/fractions/new" element={<FractionForm />} />
-      <Route path="/fractions/:id" element={<FractionForm />} />
-      <Route path="/fractions/:fractionId/owners" element={<OwnersForm />} />
-      <Route path="/fractions/:fractionId/tenant" element={<TenantsForm />} />
+                  {/* Condominios */}
+                  <Route path="/condominios/predios" element={<GestaoPredios />} />
+                  <Route path="/condominios/relatorios" element={<GestaoRelatorios />} />
+                  <Route path="/condominios/reservas" element={<GestaoReservas />} />
+                  <Route path="/condominios/multi" element={<MultiCondominio />} />
+                  <Route path="/condominios/orcamentos" element={<PortalOrcamentos />} />
+                  <Route path="/condominios/documentos" element={<GestaoDocumentos />} />
+                  <Route path="/condominios/assembleias" element={<GestaoAssembleias />} />
 
-      {/* CONDÓMINOS */}
-      <Route path="/condominos" element={<Condominos />} />
-      <Route path="/condominos/novo" element={<CondominoForm />} />
-      <Route path="/condominos/:id" element={<CondominoForm />} />
+                  {/* Financeiro */}
+                  <Route path="/financeiro/contas" element={<GestaoContas />} />
+                  <Route path="/financeiro/movimentos" element={<GestaoMovimentos />} />
+                  <Route path="/financeiro/emissao" element={<GestaoEmissao />} />
+                  <Route path="/financeiro/fundo-reserva" element={<GestaoFundoReserva />} />
 
-      {/* PAGAMENTOS */}
-      <Route path="/pagamentos" element={<Pagamentos />} />
-      <Route path="/pagamentos/novo" element={<PagamentoForm />} />
-      <Route path="/pagamentos/:id" element={<PagamentoForm />} />
+                  {/* Manutenção */}
+                  <Route path="/manutencao/intervencoes" element={<GestaoManutencaoIntervencoes />} />
+                  <Route path="/manutencao/vistorias" element={<GestaoVistoriasLimpezas />} />
 
-      {/* OBRAS */}
-      <Route path="/obras" element={<Obras />} />
-      <Route path="/obras/novo" element={<ObraForm />} />
-      <Route path="/obras/:id" element={<ObraForm />} />
+                  {/* Unidades */}
+                  <Route path="/unidades/fracoes" element={<GestaoFracoes />} />
 
-      {/* LIMPEZAS */}
-      <Route path="/limpezas" element={<Limpezas />} />
-      <Route path="/limpezas/novo" element={<LimpezaForm />} />
-      <Route path="/limpezas/:id" element={<LimpezaForm />} />
+                  {/* IA */}
+                  <Route path="/ia/avancada" element={<IAavancada />} />
 
-      {/* DOCUMENTOS */}
-      <Route path="/documentos" element={<Documentos />} />
-      <Route path="/documentos/novo" element={<DocumentoForm />} />
-      <Route path="/documentos/:id" element={<DocumentoForm />} />
+                  {/* Simulador */}
+                  <Route path="/simulador" element={<PWASimulator />} />
 
-      {/* EXPORTAÇÕES */}
-      <Route path="/exportacoes" element={<Exportacoes />} />
-      <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
-      <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
-
-      {/* FORNECEDORES */}
-      <Route path="/fornecedores" element={<Fornecedores />} />
-      <Route path="/fornecedores/novo" element={<FornecedorForm />} />
-      <Route path="/fornecedores/:id" element={<FornecedorForm />} />
-
-      {/* AVISOS */}
-      <Route path="/avisos" element={<Avisos />} />
-      <Route path="/avisos/novo" element={<AvisoForm />} />
-      <Route path="/avisos/:id" element={<AvisoForm />} />
-
-      {/* REUNIÕES */}
-      <Route path="/reunioes" element={<Reunioes />} />
-      <Route path="/reunioes/novo" element={<ReuniaoForm />} />
-      <Route path="/reunioes/:id" element={<ReuniaoForm />} />
-
-      {/* TAREFAS */}
-      <Route path="/tarefas" element={<Tarefas />} />
-      <Route path="/tarefas/novo" element={<TarefaForm />} />
-      <Route path="/tarefas/:id" element={<TarefaForm />} />
-
-      {/* VEÍCULOS */}
-      <Route path="/veiculos" element={<Veiculos />} />
-      <Route path="/veiculos/novo" element={<VeiculoForm />} />
-      <Route path="/veiculos/:id" element={<VeiculoForm />} />
-
-      {/* CHAVES */}
-      <Route path="/chaves" element={<Chaves />} />
-      <Route path="/chaves/novo" element={<ChaveForm />} />
-      <Route path="/chaves/:id" element={<ChaveForm />} />
-
-      {/* ANIMAIS */}
-      <Route path="/animais" element={<Animais />} />
-      <Route path="/animais/novo" element={<AnimalForm />} />
-      <Route path="/animais/:id" element={<AnimalForm />} />
-
-      {/* ARRECADACOES */}
-      <Route path="/arrecadacoes" element={<Arrecadacoes />} />
-      <Route path="/arrecadacoes/novo" element={<ArrecadacaoForm />} />
-      <Route path="/arrecadacoes/:id" element={<ArrecadacaoForm />} />
-
-      {/* INCIDENTES */}
-      <Route path="/incidentes" element={<Incidentes />} />
-      <Route path="/incidentes/novo" element={<IncidenteForm />} />
-      <Route path="/incidentes/:id" element={<IncidenteForm />} />
-
-      {/* RESERVAS */}
-      <Route path="/reservas" element={<Reservas />} />
-      <Route path="/reservas/novo" element={<ReservaForm />} />
-      <Route path="/reservas/:id" element={<ReservaForm />} />
-
-      {/* CONTRATOS */}
-      <Route path="/contratos" element={<Contratos />} />
-      <Route path="/contratos/novo" element={<ContratoForm />} />
-      <Route path="/contratos/:id" element={<ContratoForm />} />
-
-      {/* SEGUROS */}
-      <Route path="/seguros" element={<Seguros />} />
-      <Route path="/seguros/novo" element={<SeguroForm />} />
-      <Route path="/seguros/:id" element={<SeguroForm />} />
-
-      {/* INVENTÁRIO */}
-      <Route path="/inventario" element={<Inventario />} />
-      <Route path="/inventario/novo" element={<InventarioForm />} />
-      <Route path="/inventario/:id" element={<InventarioForm />} />
-
-      {/* MENSAGENS INTERNAS */}
-      <Route path="/mensagens" element={<Mensagens />} />
-      <Route path="/mensagens/novo" element={<MensagemForm />} />
-      <Route path="/mensagens/:id" element={<MensagemForm />} />
-
-      {/* UTILIZADORES */}
-      <Route path="/utilizadores" element={<Utilizadores />} />
-      <Route path="/utilizadores/novo" element={<UtilizadorForm />} />
-      <Route path="/utilizadores/:id" element={<UtilizadorForm />} />
-    </Routes>
+                  {/* Fallback */}
+                  <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+              </AppLayout>
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
