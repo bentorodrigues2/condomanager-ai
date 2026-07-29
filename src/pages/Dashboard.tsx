@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { lightTheme, darkTheme } from '../theme';
@@ -378,15 +377,4 @@ function GraphBox({ title, children, theme }) {
     <div
       style={{
         background: theme.colors.card,
-        padding: '1rem',
-        borderRadius: '12px',
-        boxShadow: theme.shadow.card,
-        border: `1px solid ${theme.colors.border}`,
-        marginBottom: '1.5rem'
-      }}
-    >
-      <h2 style={{ marginBottom: '1rem' }}>{title}</h2>
-      {children}
-    </div>
-  );
-}
+        padding
