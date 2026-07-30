@@ -70,9 +70,10 @@ export function AppRouter() {
         element={
           <AppLayout>
             <Routes>
+              {/* Página inicial com layout */}
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              
+
               <Route path="/predios" element={<Predios />} />
               <Route path="/predios/novo" element={<PredioForm />} />
               <Route path="/predios/:id" element={<PredioForm />} />
@@ -143,39 +144,3 @@ export function AppRouter() {
               <Route path="/inventario/:id" element={<InventarioForm />} />
 
               <Route path="/avisos" element={<Avisos />} />
-              <Route path="/avisos/novo" element={<AvisoForm />} />
-              <Route path="/avisos/:id" element={<AvisoForm />} />
-
-              <Route path="/animais" element={<Animais />} />
-              <Route path="/animais/novo" element={<AnimalForm />} />
-              <Route path="/animais/:id" element={<AnimalForm />} />
-
-              <Route path="/chaves" element={<Chaves />} />
-              <Route path="/chaves/novo" element={<ChaveForm />} />
-              <Route path="/chaves/:id" element={<ChaveForm />} />
-
-              <Route path="/exportacoes" element={<Exportacoes />} />
-              <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
-              <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
-
-              <Route path="/mensagens" element={<Mensagens />} />
-              <Route path="/mensagens/novo" element={<MensagemForm />} />
-              <Route path="/mensagens/:id" element={<MensagemForm />} />
-
-              <Route path="/tenants/novo" element={<TenantsForm />} />
-              <Route path="/owners/novo" element={<OwnersForm />} />
-
-              <Route path="/notificacoes" element={<Notificacoes />} />
-              <Route path="/perfil" element={<Perfil />} />
-
-              {/* Fallback */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </AppLayout>
-        }
-      />
-    </Routes>
-  );
-}
-
-export default AppRouter;
