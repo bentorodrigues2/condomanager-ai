@@ -55,7 +55,7 @@ import MensagemForm from "../pages/MensagemForm";
 import TenantsForm from "../pages/TenantsForm";
 import OwnersForm from "../pages/OwnersForm";
 
-export function AppRouter() {
+export default function AppRouter() {
   return (
     <Routes>
       {/* Public Auth Routes */}
@@ -64,13 +64,12 @@ export function AppRouter() {
       <Route path="/auth/recover" element={<Login />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Main Application Routes wrapped in AppLayout */}
+      {/* Main Application Routes */}
       <Route
         path="*"
         element={
           <AppLayout>
             <Routes>
-              {/* Página inicial com layout */}
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
 
@@ -144,3 +143,37 @@ export function AppRouter() {
               <Route path="/inventario/:id" element={<InventarioForm />} />
 
               <Route path="/avisos" element={<Avisos />} />
+              <Route path="/avisos/novo" element={<AvisoForm />} />
+              <Route path="/avisos/:id" element={<AvisoForm />} />
+
+              <Route path="/animais" element={<Animais />} />
+              <Route path="/animais/novo" element={<AnimalForm />} />
+              <Route path="/animais/:id" element={<AnimalForm />} />
+
+              <Route path="/chaves" element={<Chaves />} />
+              <Route path="/chaves/novo" element={<ChaveForm />} />
+              <Route path="/chaves/:id" element={<ChaveForm />} />
+
+              <Route path="/exportacoes" element={<Exportacoes />} />
+              <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
+              <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
+
+              <Route path="/mensagens" element={<Mensagens />} />
+              <Route path="/mensagens/novo" element={<MensagemForm />} />
+              <Route path="/mensagens/:id" element={<MensagemForm />} />
+
+              <Route path="/tenants/novo" element={<TenantsForm />} />
+              <Route path="/owners/novo" element={<OwnersForm />} />
+
+              <Route path="/notificacoes" element={<Notificacoes />} />
+              <Route path="/perfil" element={<Perfil />} />
+
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </AppLayout>
+        }
+      />
+    </Routes>
+  );
+}
