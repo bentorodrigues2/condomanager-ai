@@ -41,3 +41,24 @@ export async function delete_auditoria(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarAuditoria() {
+  return await supabase.from("auditoria").select("*");
+}
+
+export async function obterAuditoria(id: any) {
+  return await supabase.from("auditoria").select("*").eq("id", id).single();
+}
+
+export async function criarAuditoria(data: any) {
+  return await supabase.from("auditoria").insert(data);
+}
+
+export async function atualizarAuditoria(id: any, data: any) {
+  return await supabase.from("auditoria").update(data).eq("id", id);
+}
+
+export async function removerAuditoria(id: any) {
+  return await supabase.from("auditoria").delete().eq("id", id);
+}

@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useParams } from "react-router-dom";
 
-export default function OwnersForm() { return (<PageGuard role='gestor'>) {
+export default function OwnersForm() {
   const { fractionId } = useParams();
   const [owners, setOwners] = useState([]);
   const [profiles, setProfiles] = useState([]);
@@ -56,10 +55,10 @@ export default function OwnersForm() { return (<PageGuard role='gestor'>) {
         {owners.map((o) => (
           <li key={o.id}>
             {o.profiles.name}
-            {canAccess('gestor') && <button onClick={() => removeOwner(o.id)}>Remover</button>
+            <button onClick={() => removeOwner(o.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }

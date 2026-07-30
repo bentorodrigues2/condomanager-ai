@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarPagamento,
@@ -8,7 +7,7 @@ import {
 import { supabase } from "../supabaseClient";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function PagamentoForm() { return (<PageGuard role='gestor'>) {
+export default function PagamentoForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -87,8 +86,8 @@ export default function PagamentoForm() { return (<PageGuard role='gestor'>) {
         ))}
       </select>
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

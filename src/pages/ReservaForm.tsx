@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarReserva,
@@ -8,7 +7,7 @@ import {
 import { supabase } from "../supabaseClient";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function ReservaForm() { return (<PageGuard role='gestor'>) {
+export default function ReservaForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -101,8 +100,8 @@ export default function ReservaForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

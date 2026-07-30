@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from './Sidebar';
+import { lightTheme } from '../theme';
 
-export function AppLayout({ theme, children }) {
+export function AppLayout({ theme = lightTheme, children }: { theme?: any; children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     const saved = window.localStorage.getItem('sidebar-open');
     return saved === 'true';
@@ -84,3 +85,5 @@ export function AppLayout({ theme, children }) {
     </div>
   );
 }
+
+export default AppLayout;

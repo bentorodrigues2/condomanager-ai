@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarCondomino,
@@ -7,7 +6,7 @@ import {
 } from "../services/condominos";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function CondominoForm() { return (<PageGuard role='gestor'>) {
+export default function CondominoForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -62,8 +61,8 @@ export default function CondominoForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarExportacoes, removerExportacao } from "../services/exportacoes";
 import { Link } from "react-router-dom";
 
-export default function Exportacoes() { return (<PageGuard role='gestor'>) {
+export default function Exportacoes() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Exportacoes() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Exportações / Relatórios</h1>
 
-      {canAccess('gestor') && <Link to="/exportacoes/novo">Nova Exportação</Link>
+      <Link to="/exportacoes/novo">Nova Exportação</Link>
 
       <ul>
         {data.map((e) => (
           <li key={e.id}>
             {e.data} — {e.tipo} — {e.descricao}
-            {canAccess('gestor') && <Link to={`/exportacoes/${e.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(e.id)}>Remover</button>
+            <Link to={`/exportacoes/${e.id}`}>Editar</Link>
+            <button onClick={() => remover(e.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 

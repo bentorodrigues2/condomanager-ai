@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarAnimal,
@@ -8,7 +7,7 @@ import {
 import { supabase } from "../supabaseClient";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function AnimalForm() { return (<PageGuard role='gestor'>) {
+export default function AnimalForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -93,8 +92,8 @@ export default function AnimalForm() { return (<PageGuard role='gestor'>) {
         ))}
       </select>
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

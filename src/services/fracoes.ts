@@ -41,3 +41,24 @@ export async function delete_fracoes(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarFracoes() {
+  return await supabase.from("fracoes").select("*");
+}
+
+export async function obterFracao(id: any) {
+  return await supabase.from("fracoes").select("*").eq("id", id).single();
+}
+
+export async function criarFracao(data: any) {
+  return await supabase.from("fracoes").insert(data);
+}
+
+export async function atualizarFracao(id: any, data: any) {
+  return await supabase.from("fracoes").update(data).eq("id", id);
+}
+
+export async function removerFracao(id: any) {
+  return await supabase.from("fracoes").delete().eq("id", id);
+}

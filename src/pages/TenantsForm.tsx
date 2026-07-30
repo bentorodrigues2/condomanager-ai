@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import { useParams } from "react-router-dom";
 
-export default function TenantsForm() { return (<PageGuard role='gestor'>) {
+export default function TenantsForm() {
   const { fractionId } = useParams();
   const [tenant, setTenant] = useState(null);
   const [profiles, setProfiles] = useState([]);
@@ -50,6 +49,6 @@ export default function TenantsForm() { return (<PageGuard role='gestor'>) {
       </select>
 
       {tenant && <p>Inquilino atual: {tenant.profiles.name}</p>}
-    </div></PageGuard>)
+    </div>
   );
 }

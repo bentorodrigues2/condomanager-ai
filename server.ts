@@ -1,4 +1,4 @@
-﻿import express from "express";
+import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
@@ -215,14 +215,14 @@ Seja preciso. Se nÃ£o conseguir identificar a fraÃ§Ã£o ou aviso com certez
               type: Type.ARRAY,
               items: {
                 type: Type.OBJECT,
-                required: ["data", "valor", "ordenante", "descricao", "fracao_sugerida", "correspondencia_confianÃ§a", "avisos_associados"],
+                required: ["data", "valor", "ordenante", "descricao", "fracao_sugerida", "correspondencia_confianca", "avisos_associados"],
                 properties: {
                   data: { type: Type.STRING },
                   valor: { type: Type.NUMBER },
                   ordenante: { type: Type.STRING },
                   descricao: { type: Type.STRING },
                   fracao_sugerida: { type: Type.STRING },
-                  correspondencia_confianÃ§a: { type: Type.STRING },
+                  correspondencia_confianca: { type: Type.STRING },
                   avisos_associados: {
                     type: Type.ARRAY,
                     items: { type: Type.STRING }

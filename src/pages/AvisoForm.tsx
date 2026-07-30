@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarAviso,
@@ -7,7 +6,7 @@ import {
 } from "../services/avisos";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function AvisoForm() { return (<PageGuard role='gestor'>) {
+export default function AvisoForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -62,8 +61,8 @@ export default function AvisoForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

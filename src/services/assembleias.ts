@@ -41,3 +41,24 @@ export async function delete_assembleias(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarAssembleias() {
+  return await supabase.from("assembleias").select("*");
+}
+
+export async function obterAssembleia(id: any) {
+  return await supabase.from("assembleias").select("*").eq("id", id).single();
+}
+
+export async function criarAssembleia(data: any) {
+  return await supabase.from("assembleias").insert(data);
+}
+
+export async function atualizarAssembleia(id: any, data: any) {
+  return await supabase.from("assembleias").update(data).eq("id", id);
+}
+
+export async function removerAssembleia(id: any) {
+  return await supabase.from("assembleias").delete().eq("id", id);
+}

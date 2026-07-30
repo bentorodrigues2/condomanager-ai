@@ -41,3 +41,24 @@ export async function delete_condominos(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarCondominos() {
+  return await supabase.from("condominos").select("*");
+}
+
+export async function obterCondomino(id: any) {
+  return await supabase.from("condominos").select("*").eq("id", id).single();
+}
+
+export async function criarCondomino(data: any) {
+  return await supabase.from("condominos").insert(data);
+}
+
+export async function atualizarCondomino(id: any, data: any) {
+  return await supabase.from("condominos").update(data).eq("id", id);
+}
+
+export async function removerCondomino(id: any) {
+  return await supabase.from("condominos").delete().eq("id", id);
+}

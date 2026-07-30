@@ -1,10 +1,11 @@
-﻿export interface Predio {
+export interface Predio {
   id_predio: string;
   nome?: string;
-  morada_linha1: string;
+  morada_linha1?: string;
   morada_linha2?: string;
   codigo_postal?: string;
   localidade?: string;
+  num_porta?: string;
 }
 
 export interface Fracao {
@@ -12,6 +13,7 @@ export interface Fracao {
   id_predio: string;
   designacao: string;
   area?: number;
+  fracao_nome?: string;
 }
 
 export interface Condominio {
@@ -36,10 +38,52 @@ export interface LoggedUser {
   role: "ADMIN" | "USER";
 }
 
+export interface Conta {
+  id?: string;
+  nome?: string;
+  iban?: string;
+  saldo?: number;
+}
 
+export interface Fornecedor {
+  id?: string;
+  nome?: string;
+  servico?: string;
+  contacto?: string;
+}
 
+export interface Aviso {
+  id?: string;
+  titulo?: string;
+  descricao?: string;
+  data?: string;
+}
 
+export interface Movimento {
+  id?: string;
+  tipo?: string;
+  valor?: number;
+  descricao?: string;
+  data?: string;
+}
 
+export interface Reuniao {
+  id?: string;
+  titulo?: string;
+  data?: string;
+  local?: string;
+}
 
+export interface Documento {
+  id?: string;
+  nome?: string;
+  url?: string;
+  categoria?: string;
+}
 
-
+export interface Ocorrencia {
+  id?: string;
+  titulo?: string;
+  descricao?: string;
+  estado?: string;
+}

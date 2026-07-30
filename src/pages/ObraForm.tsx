@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarObra,
@@ -7,7 +6,7 @@ import {
 } from "../services/obras";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function ObraForm() { return (<PageGuard role='gestor'>) {
+export default function ObraForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -71,8 +70,8 @@ export default function ObraForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

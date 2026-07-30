@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarPredio,
@@ -7,7 +6,7 @@ import {
 } from "../services/predios";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function PredioForm() { return (<PageGuard role='gestor'>) {
+export default function PredioForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -62,8 +61,8 @@ export default function PredioForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

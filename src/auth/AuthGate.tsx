@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase } from '../supabaseClient';
 import { getUserRole } from './getUserRole';
 
-export function AuthGate({ children, requiredRole }) {
+export function AuthGate({ children, requiredRole }: { children: React.ReactNode; requiredRole?: string }) {
   const [session, setSession] = useState(null);
   const [role, setRole] = useState(null);
   const [loading, setLoading] = useState(true);

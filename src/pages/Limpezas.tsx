@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarLimpezas, removerLimpeza } from "../services/limpezas";
 import { Link } from "react-router-dom";
 
-export default function Limpezas() { return (<PageGuard role='gestor'>) {
+export default function Limpezas() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Limpezas() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Limpezas</h1>
 
-      {canAccess('gestor') && <Link to="/limpezas/novo">Nova Limpeza</Link>
+      <Link to="/limpezas/novo">Nova Limpeza</Link>
 
       <ul>
         {data.map((l) => (
           <li key={l.id}>
             {l.data} — {l.responsavel} — {l.custo}€
-            {canAccess('gestor') && <Link to={`/limpezas/${l.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(l.id)}>Remover</button>
+            <Link to={`/limpezas/${l.id}`}>Editar</Link>
+            <button onClick={() => remover(l.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 
