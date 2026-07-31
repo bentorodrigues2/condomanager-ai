@@ -1,6 +1,5 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "builds": [
     {
       "src": "frontend/react/package.json",
@@ -10,8 +9,4 @@
   "routes": [
     { "src": "/(.*)", "dest": "frontend/react/dist/$1" }
   ]
-=======
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
->>>>>>> 88525f138589cd8b9b4b878a17c0987f184c1671
 }
