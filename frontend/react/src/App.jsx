@@ -1,24 +1,11 @@
-
-import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
-
-
-
-
-
-
-
-
-
 import React from "react";
-import LayoutTop from "./components/LayoutTop";
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./router/AppRouter";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <LayoutTop />
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
 }
-
-export default App;

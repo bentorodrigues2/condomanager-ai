@@ -1,9 +1,14 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "../layout/AppLayout";
 
-// Main Pages
+// Página inicial premium
+import LayoutTop from "../components/LayoutTop";
+
+// Dashboard
 import Dashboard from "../pages/Dashboard";
+
+// Páginas internas
 import Predios from "../pages/Predios";
 import PredioForm from "../pages/PredioForm";
 import Documentos from "../pages/Documentos";
@@ -58,122 +63,120 @@ import OwnersForm from "../pages/OwnersForm";
 export default function AppRouter() {
   return (
     <Routes>
-      {/* Public Auth Routes */}
-      <Route path="/auth/login" element={<Login />} />
-      <Route path="/auth/register" element={<Login />} />
-      <Route path="/auth/recover" element={<Login />} />
+
+      {/* Rotas públicas */}
       <Route path="/login" element={<Login />} />
 
-      {/* Main Application Routes */}
-      <Route
-        path="*"
-        element={
-          <AppLayout>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+      {/* Rotas internas com layout */}
+      <Route element={<AppLayout />}>
 
-              <Route path="/predios" element={<Predios />} />
-              <Route path="/predios/novo" element={<PredioForm />} />
-              <Route path="/predios/:id" element={<PredioForm />} />
+        {/* Página inicial premium */}
+        <Route path="/" element={<LayoutTop />} />
 
-              <Route path="/fracoes" element={<Fracoes />} />
-              <Route path="/fractions" element={<FractionsList />} />
-              <Route path="/fractions/new" element={<FractionForm />} />
-              <Route path="/fractions/:id" element={<FractionForm />} />
+        {/* Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
 
-              <Route path="/condominos" element={<Condominos />} />
-              <Route path="/condominos/novo" element={<CondominoForm />} />
-              <Route path="/condominos/:id" element={<CondominoForm />} />
+        {/* Todas as outras páginas */}
+        <Route path="/predios" element={<Predios />} />
+        <Route path="/predios/novo" element={<PredioForm />} />
+        <Route path="/predios/:id" element={<PredioForm />} />
 
-              <Route path="/documentos" element={<Documentos />} />
-              <Route path="/documentos/novo" element={<DocumentoForm />} />
-              <Route path="/documentos/:id" element={<DocumentoForm />} />
+        <Route path="/fracoes" element={<Fracoes />} />
+        <Route path="/fractions" element={<FractionsList />} />
+        <Route path="/fractions/new" element={<FractionForm />} />
+        <Route path="/fractions/:id" element={<FractionForm />} />
 
-              <Route path="/pagamentos" element={<Pagamentos />} />
-              <Route path="/pagamentos/novo" element={<PagamentoForm />} />
-              <Route path="/pagamentos/:id" element={<PagamentoForm />} />
+        <Route path="/condominos" element={<Condominos />} />
+        <Route path="/condominos/novo" element={<CondominoForm />} />
+        <Route path="/condominos/:id" element={<CondominoForm />} />
 
-              <Route path="/reservas" element={<Reservas />} />
-              <Route path="/reservas/novo" element={<ReservaForm />} />
-              <Route path="/reservas/:id" element={<ReservaForm />} />
+        <Route path="/documentos" element={<Documentos />} />
+        <Route path="/documentos/novo" element={<DocumentoForm />} />
+        <Route path="/documentos/:id" element={<DocumentoForm />} />
 
-              <Route path="/fornecedores" element={<Fornecedores />} />
-              <Route path="/fornecedores/novo" element={<FornecedorForm />} />
-              <Route path="/fornecedores/:id" element={<FornecedorForm />} />
+        <Route path="/pagamentos" element={<Pagamentos />} />
+        <Route path="/pagamentos/novo" element={<PagamentoForm />} />
+        <Route path="/pagamentos/:id" element={<PagamentoForm />} />
 
-              <Route path="/incidentes" element={<Incidentes />} />
-              <Route path="/incidentes/novo" element={<IncidenteForm />} />
-              <Route path="/incidentes/:id" element={<IncidenteForm />} />
+        <Route path="/reservas" element={<Reservas />} />
+        <Route path="/reservas/novo" element={<ReservaForm />} />
+        <Route path="/reservas/:id" element={<ReservaForm />} />
 
-              <Route path="/limpezas" element={<Limpezas />} />
-              <Route path="/limpezas/novo" element={<LimpezaForm />} />
-              <Route path="/limpezas/:id" element={<LimpezaForm />} />
+        <Route path="/fornecedores" element={<Fornecedores />} />
+        <Route path="/fornecedores/novo" element={<FornecedorForm />} />
+        <Route path="/fornecedores/:id" element={<FornecedorForm />} />
 
-              <Route path="/reunioes" element={<Reunioes />} />
-              <Route path="/reunioes/novo" element={<ReuniaoForm />} />
-              <Route path="/reunioes/:id" element={<ReuniaoForm />} />
+        <Route path="/incidentes" element={<Incidentes />} />
+        <Route path="/incidentes/novo" element={<IncidenteForm />} />
+        <Route path="/incidentes/:id" element={<IncidenteForm />} />
 
-              <Route path="/tarefas" element={<Tarefas />} />
-              <Route path="/tarefas/novo" element={<TarefaForm />} />
-              <Route path="/tarefas/:id" element={<TarefaForm />} />
+        <Route path="/limpezas" element={<Limpezas />} />
+        <Route path="/limpezas/novo" element={<LimpezaForm />} />
+        <Route path="/limpezas/:id" element={<LimpezaForm />} />
 
-              <Route path="/veiculos" element={<Veiculos />} />
-              <Route path="/veiculos/novo" element={<VeiculoForm />} />
-              <Route path="/veiculos/:id" element={<VeiculoForm />} />
+        <Route path="/reunioes" element={<Reunioes />} />
+        <Route path="/reunioes/novo" element={<ReuniaoForm />} />
+        <Route path="/reunioes/:id" element={<ReuniaoForm />} />
 
-              <Route path="/utilizadores" element={<Utilizadores />} />
-              <Route path="/utilizadores/novo" element={<UtilizadorForm />} />
-              <Route path="/utilizadores/:id" element={<UtilizadorForm />} />
+        <Route path="/tarefas" element={<Tarefas />} />
+        <Route path="/tarefas/novo" element={<TarefaForm />} />
+        <Route path="/tarefas/:id" element={<TarefaForm />} />
 
-              <Route path="/contratos" element={<Contratos />} />
-              <Route path="/contratos/novo" element={<ContratoForm />} />
-              <Route path="/contratos/:id" element={<ContratoForm />} />
+        <Route path="/veiculos" element={<Veiculos />} />
+        <Route path="/veiculos/novo" element={<VeiculoForm />} />
+        <Route path="/veiculos/:id" element={<VeiculoForm />} />
 
-              <Route path="/obras" element={<Obras />} />
-              <Route path="/obras/novo" element={<ObraForm />} />
-              <Route path="/obras/:id" element={<ObraForm />} />
+        <Route path="/utilizadores" element={<Utilizadores />} />
+        <Route path="/utilizadores/novo" element={<UtilizadorForm />} />
+        <Route path="/utilizadores/:id" element={<UtilizadorForm />} />
 
-              <Route path="/seguros" element={<Seguros />} />
-              <Route path="/seguros/novo" element={<SeguroForm />} />
-              <Route path="/seguros/:id" element={<SeguroForm />} />
+        <Route path="/contratos" element={<Contratos />} />
+        <Route path="/contratos/novo" element={<ContratoForm />} />
+        <Route path="/contratos/:id" element={<ContratoForm />} />
 
-              <Route path="/inventario" element={<Inventario />} />
-              <Route path="/inventario/novo" element={<InventarioForm />} />
-              <Route path="/inventario/:id" element={<InventarioForm />} />
+        <Route path="/obras" element={<Obras />} />
+        <Route path="/obras/novo" element={<ObraForm />} />
+        <Route path="/obras/:id" element={<ObraForm />} />
 
-              <Route path="/avisos" element={<Avisos />} />
-              <Route path="/avisos/novo" element={<AvisoForm />} />
-              <Route path="/avisos/:id" element={<AvisoForm />} />
+        <Route path="/seguros" element={<Seguros />} />
+        <Route path="/seguros/novo" element={<SeguroForm />} />
+        <Route path="/seguros/:id" element={<SeguroForm />} />
 
-              <Route path="/animais" element={<Animais />} />
-              <Route path="/animais/novo" element={<AnimalForm />} />
-              <Route path="/animais/:id" element={<AnimalForm />} />
+        <Route path="/inventario" element={<Inventario />} />
+        <Route path="/inventario/novo" element={<InventarioForm />} />
+        <Route path="/inventario/:id" element={<InventarioForm />} />
 
-              <Route path="/chaves" element={<Chaves />} />
-              <Route path="/chaves/novo" element={<ChaveForm />} />
-              <Route path="/chaves/:id" element={<ChaveForm />} />
+        <Route path="/avisos" element={<Avisos />} />
+        <Route path="/avisos/novo" element={<AvisoForm />} />
+        <Route path="/avisos/:id" element={<AvisoForm />} />
 
-              <Route path="/exportacoes" element={<Exportacoes />} />
-              <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
-              <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
+        <Route path="/animais" element={<Animais />} />
+        <Route path="/animais/novo" element={<AnimalForm />} />
+        <Route path="/animais/:id" element={<AnimalForm />} />
 
-              <Route path="/mensagens" element={<Mensagens />} />
-              <Route path="/mensagens/novo" element={<MensagemForm />} />
-              <Route path="/mensagens/:id" element={<MensagemForm />} />
+        <Route path="/chaves" element={<Chaves />} />
+        <Route path="/chaves/novo" element={<ChaveForm />} />
+        <Route path="/chaves/:id" element={<ChaveForm />} />
 
-              <Route path="/tenants/novo" element={<TenantsForm />} />
-              <Route path="/owners/novo" element={<OwnersForm />} />
+        <Route path="/exportacoes" element={<Exportacoes />} />
+        <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
+        <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
 
-              <Route path="/notificacoes" element={<Notificacoes />} />
-              <Route path="/perfil" element={<Perfil />} />
+        <Route path="/mensagens" element={<Mensagens />} />
+        <Route path="/mensagens/novo" element={<MensagemForm />} />
+        <Route path="/mensagens/:id" element={<MensagemForm />} />
 
-              {/* Fallback */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </AppLayout>
-        }
-      />
+        <Route path="/tenants/novo" element={<TenantsForm />} />
+        <Route path="/owners/novo" element={<OwnersForm />} />
+
+        <Route path="/notificacoes" element={<Notificacoes />} />
+        <Route path="/perfil" element={<Perfil />} />
+
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+
+      </Route>
+
     </Routes>
   );
 }
