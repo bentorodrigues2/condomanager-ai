@@ -41,7 +41,7 @@ export function AppLayout({ theme = lightTheme }: { theme?: any }) {
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0.75rem 1rem",
-          borderBottom: 1px solid ,
+          borderBottom: `1px solid ${theme.colors.border}`,
           background: theme.colors.card
         }}
       >
@@ -50,7 +50,7 @@ export function AppLayout({ theme = lightTheme }: { theme?: any }) {
           style={{
             padding: "0.4rem 0.6rem",
             borderRadius: "0.4rem",
-            border: 1px solid ,
+            border: `1px solid ${theme.colors.border}`,
             background: theme.colors.card,
             color: theme.colors.text,
             cursor: "pointer",
@@ -59,7 +59,7 @@ export function AppLayout({ theme = lightTheme }: { theme?: any }) {
             gap: "0.3rem"
           }}
         >
-          <span>â˜°</span>
+          <span>☰</span>
           <span style={{ fontSize: "0.85rem" }}>Menu</span>
         </button>
 
