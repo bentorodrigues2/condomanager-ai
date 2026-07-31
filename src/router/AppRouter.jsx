@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "../layout/AppLayout";
 
 // Página inicial premium
-import LayoutTop from "../components/LayoutTop";
+import LayoutTop from "../pages/LayoutTop";
 
 // Dashboard
 import Dashboard from "../pages/Dashboard";
@@ -180,3 +180,5 @@ export default function AppRouter() {
     </Routes>
   );
 }
+
+
