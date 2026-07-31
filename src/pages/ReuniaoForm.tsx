@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarReuniao,
@@ -7,7 +6,7 @@ import {
 } from "../services/reunioes";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function ReuniaoForm() { return (<PageGuard role='gestor'>) {
+export default function ReuniaoForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -70,8 +69,8 @@ export default function ReuniaoForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

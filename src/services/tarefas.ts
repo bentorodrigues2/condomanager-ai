@@ -41,3 +41,24 @@ export async function delete_tarefas(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarTarefas() {
+  return await supabase.from("tarefas").select("*");
+}
+
+export async function obterTarefa(id: any) {
+  return await supabase.from("tarefas").select("*").eq("id", id).single();
+}
+
+export async function criarTarefa(data: any) {
+  return await supabase.from("tarefas").insert(data);
+}
+
+export async function atualizarTarefa(id: any, data: any) {
+  return await supabase.from("tarefas").update(data).eq("id", id);
+}
+
+export async function removerTarefa(id: any) {
+  return await supabase.from("tarefas").delete().eq("id", id);
+}

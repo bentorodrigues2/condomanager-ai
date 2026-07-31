@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarFornecedor,
@@ -7,7 +6,7 @@ import {
 } from "../services/fornecedores";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function FornecedorForm() { return (<PageGuard role='gestor'>) {
+export default function FornecedorForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -78,8 +77,8 @@ export default function FornecedorForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

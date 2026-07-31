@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarVeiculos, removerVeiculo } from "../services/veiculos";
 import { Link } from "react-router-dom";
 
-export default function Veiculos() { return (<PageGuard role='gestor'>) {
+export default function Veiculos() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Veiculos() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Veículos</h1>
 
-      {canAccess('gestor') && <Link to="/veiculos/novo">Novo Veículo</Link>
+      <Link to="/veiculos/novo">Novo Veículo</Link>
 
       <ul>
         {data.map((v) => (
           <li key={v.id}>
             {v.matricula} — {v.marca} {v.modelo} — {v.condominos?.nome}
-            {canAccess('gestor') && <Link to={`/veiculos/${v.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(v.id)}>Remover</button>
+            <Link to={`/veiculos/${v.id}`}>Editar</Link>
+            <button onClick={() => remover(v.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 

@@ -41,3 +41,24 @@ export async function delete_documentos(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarDocumentos() {
+  return await supabase.from("documentos").select("*");
+}
+
+export async function obterDocumento(id: any) {
+  return await supabase.from("documentos").select("*").eq("id", id).single();
+}
+
+export async function criarDocumento(data: any) {
+  return await supabase.from("documentos").insert(data);
+}
+
+export async function atualizarDocumento(id: any, data: any) {
+  return await supabase.from("documentos").update(data).eq("id", id);
+}
+
+export async function removerDocumento(id: any) {
+  return await supabase.from("documentos").delete().eq("id", id);
+}

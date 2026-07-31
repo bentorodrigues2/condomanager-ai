@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { createFraction, getFraction, updateFraction } from "../services/fractionsService";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
-export default function FractionForm() { return (<PageGuard role='gestor'>) {
+export default function FractionForm() {
   const { id } = useParams();
   const [params] = useSearchParams();
   const buildingId = params.get("building");
@@ -47,7 +46,7 @@ export default function FractionForm() { return (<PageGuard role='gestor'>) {
       <input name="area" placeholder="Ãrea (mÂ²)" value={form.area} onChange={handleChange} />
       <input name="floor" placeholder="Piso" value={form.floor} onChange={handleChange} />
 
-      {canAccess('gestor') && <button onClick={save}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={save}>Guardar</button>
+    </div>
   );
 }

@@ -1,4 +1,3 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import {
   criarTarefa,
@@ -7,7 +6,7 @@ import {
 } from "../services/tarefas";
 import { useNavigate, useParams } from "react-router-dom";
 
-export default function TarefaForm() { return (<PageGuard role='gestor'>) {
+export default function TarefaForm() {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -84,8 +83,8 @@ export default function TarefaForm() { return (<PageGuard role='gestor'>) {
         onChange={alterar}
       />
 
-      {canAccess('gestor') && <button onClick={guardar}>Guardar</button>
-    </div></PageGuard>)
+      <button onClick={guardar}>Guardar</button>
+    </div>
   );
 }
 

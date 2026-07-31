@@ -41,3 +41,24 @@ export async function delete_fornecedores(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarFornecedores() {
+  return await supabase.from("fornecedores").select("*");
+}
+
+export async function obterFornecedor(id: any) {
+  return await supabase.from("fornecedores").select("*").eq("id", id).single();
+}
+
+export async function criarFornecedor(data: any) {
+  return await supabase.from("fornecedores").insert(data);
+}
+
+export async function atualizarFornecedor(id: any, data: any) {
+  return await supabase.from("fornecedores").update(data).eq("id", id);
+}
+
+export async function removerFornecedor(id: any) {
+  return await supabase.from("fornecedores").delete().eq("id", id);
+}

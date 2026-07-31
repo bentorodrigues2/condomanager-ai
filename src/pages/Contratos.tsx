@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarContratos, removerContrato } from "../services/contratos";
 import { Link } from "react-router-dom";
 
-export default function Contratos() { return (<PageGuard role='gestor'>) {
+export default function Contratos() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Contratos() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Contratos</h1>
 
-      {canAccess('gestor') && <Link to="/contratos/novo">Novo Contrato</Link>
+      <Link to="/contratos/novo">Novo Contrato</Link>
 
       <ul>
         {data.map((c) => (
           <li key={c.id}>
             {c.fornecedores?.nome} — {c.servico} — {c.data_inicio} a {c.data_fim}
-            {canAccess('gestor') && <Link to={`/contratos/${c.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(c.id)}>Remover</button>
+            <Link to={`/contratos/${c.id}`}>Editar</Link>
+            <button onClick={() => remover(c.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 

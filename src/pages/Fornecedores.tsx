@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarFornecedores, removerFornecedor } from "../services/fornecedores";
 import { Link } from "react-router-dom";
 
-export default function Fornecedores() { return (<PageGuard role='gestor'>) {
+export default function Fornecedores() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Fornecedores() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Fornecedores</h1>
 
-      {canAccess('gestor') && <Link to="/fornecedores/novo">Novo Fornecedor</Link>
+      <Link to="/fornecedores/novo">Novo Fornecedor</Link>
 
       <ul>
         {data.map((f) => (
           <li key={f.id}>
             {f.nome} — {f.telefone} — {f.email}
-            {canAccess('gestor') && <Link to={`/fornecedores/${f.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(f.id)}>Remover</button>
+            <Link to={`/fornecedores/${f.id}`}>Editar</Link>
+            <button onClick={() => remover(f.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 

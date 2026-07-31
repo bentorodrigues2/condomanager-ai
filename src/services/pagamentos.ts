@@ -41,3 +41,24 @@ export async function delete_pagamentos(id: string) {
     if (error) throw error;
     return true;
 }
+
+
+export async function listarPagamentos() {
+  return await supabase.from("pagamentos").select("*");
+}
+
+export async function obterPagamento(id: any) {
+  return await supabase.from("pagamentos").select("*").eq("id", id).single();
+}
+
+export async function criarPagamento(data: any) {
+  return await supabase.from("pagamentos").insert(data);
+}
+
+export async function atualizarPagamento(id: any, data: any) {
+  return await supabase.from("pagamentos").update(data).eq("id", id);
+}
+
+export async function removerPagamento(id: any) {
+  return await supabase.from("pagamentos").delete().eq("id", id);
+}

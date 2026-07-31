@@ -1,9 +1,8 @@
-import PageGuard from '../middleware/PageGuard';
 import React, { useEffect, useState } from "react";
 import { listarAnimais, removerAnimal } from "../services/animais";
 import { Link } from "react-router-dom";
 
-export default function Animais() { return (<PageGuard role='gestor'>) {
+export default function Animais() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,18 +23,18 @@ export default function Animais() { return (<PageGuard role='gestor'>) {
     <div>
       <h1>Animais</h1>
 
-      {canAccess('gestor') && <Link to="/animais/novo">Novo Animal</Link>
+      <Link to="/animais/novo">Novo Animal</Link>
 
       <ul>
         {data.map((a) => (
           <li key={a.id}>
             {a.nome} — {a.especie} — {a.condominos?.nome}
-            {canAccess('gestor') && <Link to={`/animais/${a.id}`}>Editar</Link>
-            {canAccess('gestor') && <button onClick={() => remover(a.id)}>Remover</button>
+            <Link to={`/animais/${a.id}`}>Editar</Link>
+            <button onClick={() => remover(a.id)}>Remover</button>
           </li>
         ))}
       </ul>
-    </div></PageGuard>)
+    </div>
   );
 }
 
