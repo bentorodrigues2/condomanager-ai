@@ -7,22 +7,12 @@ export default function LayoutTop() {
 
   return (
     <div className="layout-top-container">
-      
-      {/* SKYLINE */}
-      <img src="/assets/skyline.png" alt="Skyline" className="skyline-img" />
 
-      {/* LOGO */}
-      <img src="/assets/logo.png" alt="Logo CondoManager" className="logo-img" />
-
-      {/* VIDEO */}
-      <div className="video-frame">
-        <video src="/videos/intro.mp4" autoPlay muted loop />
-      </div>
-
-      {/* OVERLAY INFO */}
-      <div className="overlay-info">
-        <h2>CondoManager AI</h2>
-        <p>PWA & Automação Ativa</p>
+      {/* BARRA SUPERIOR */}
+      <div className="top-bar">
+        <span className="condo-address">
+          Rua Bento Rodrigues 2 - Paio Pires
+        </span>
 
         <button
           className="area-pessoal-btn"
@@ -31,6 +21,18 @@ export default function LayoutTop() {
           Área Pessoal
         </button>
       </div>
+
+      {/* SKYLINE */}
+      <img src="/assets/skyline.png" alt="Skyline" className="skyline-img" />
+
+      {/* LOGO */}
+      <img src="/assets/logo.png" alt="Logo CondoManager" className="logo-img" />
+
+      {/* VIDEO AO CENTRO */}
+      <div className="video-frame">
+        <video src="/videos/intro.mp4" autoPlay muted loop playsInline />
+      </div>
+
     </div>
   );
 }
