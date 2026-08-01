@@ -48,6 +48,8 @@ html, body {
 
 .video-element {
   width: 100%;
+  height: auto;
+  display: block;
   border-radius: 12px;
 }
 
@@ -81,7 +83,7 @@ html, body {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  margin-right: 0.5cm; /* deslocado 0.5 cm para a esquerda */
+  margin-right: 0.8cm; /* deslocado 0.8 cm para a esquerda */
 }
 
 .area-pessoal-btn:hover {
