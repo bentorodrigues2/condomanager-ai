@@ -64,14 +64,14 @@ export default function AppRouter() {
   return (
     <Routes>
 
+      {/* Página inicial premium — FORA do AppLayout */}
+      <Route path="/" element={<LayoutTop />} />
+
       {/* Rotas públicas */}
       <Route path="/login" element={<Login />} />
 
-      {/* Rotas internas com layout */}
+      {/* Rotas internas COM layout */}
       <Route element={<AppLayout />}>
-
-        {/* Página inicial premium */}
-        <Route path="/" element={<LayoutTop />} />
 
         {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
@@ -136,49 +136,4 @@ export default function AppRouter() {
 
         <Route path="/obras" element={<Obras />} />
         <Route path="/obras/novo" element={<ObraForm />} />
-        <Route path="/obras/:id" element={<ObraForm />} />
-
-        <Route path="/seguros" element={<Seguros />} />
-        <Route path="/seguros/novo" element={<SeguroForm />} />
-        <Route path="/seguros/:id" element={<SeguroForm />} />
-
-        <Route path="/inventario" element={<Inventario />} />
-        <Route path="/inventario/novo" element={<InventarioForm />} />
-        <Route path="/inventario/:id" element={<InventarioForm />} />
-
-        <Route path="/avisos" element={<Avisos />} />
-        <Route path="/avisos/novo" element={<AvisoForm />} />
-        <Route path="/avisos/:id" element={<AvisoForm />} />
-
-        <Route path="/animais" element={<Animais />} />
-        <Route path="/animais/novo" element={<AnimalForm />} />
-        <Route path="/animais/:id" element={<AnimalForm />} />
-
-        <Route path="/chaves" element={<Chaves />} />
-        <Route path="/chaves/novo" element={<ChaveForm />} />
-        <Route path="/chaves/:id" element={<ChaveForm />} />
-
-        <Route path="/exportacoes" element={<Exportacoes />} />
-        <Route path="/exportacoes/novo" element={<ExportacaoForm />} />
-        <Route path="/exportacoes/:id" element={<ExportacaoForm />} />
-
-        <Route path="/mensagens" element={<Mensagens />} />
-        <Route path="/mensagens/novo" element={<MensagemForm />} />
-        <Route path="/mensagens/:id" element={<MensagemForm />} />
-
-        <Route path="/tenants/novo" element={<TenantsForm />} />
-        <Route path="/owners/novo" element={<OwnersForm />} />
-
-        <Route path="/notificacoes" element={<Notificacoes />} />
-        <Route path="/perfil" element={<Perfil />} />
-
-        {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-
-      </Route>
-
-    </Routes>
-  );
-}
-
-
+        <Route path="/obras/:id" element={<ObraForm />
