@@ -1,10 +1,38 @@
 ﻿import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./LayoutTop.css";
+import skyline from "../../assets/skyline.png";
+import logo from "../../assets/logo.png";
 
 export default function LayoutTop() {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>CondoManager AI</h1>
-      <p>Bem-vindo ao painel principal (versão nova)</p>
+    <div className="layout-top-container">
+      
+      {/* SKYLINE */}
+      <img src={skyline} alt="Skyline" className="skyline-img" />
+
+      {/* LOGO */}
+      <img src={logo} alt="Logo CondoManager" className="logo-img" />
+
+      {/* VIDEO */}
+      <div className="video-frame">
+        <video src="/intro.mp4" autoPlay muted loop />
+      </div>
+
+      {/* OVERLAY INFO */}
+      <div className="overlay-info">
+        <h2>CondoManager AI</h2>
+        <p>PWA & Automação Ativa</p>
+
+        <button
+          className="area-pessoal-btn"
+          onClick={() => navigate("/dashboard")}
+        >
+          Área Pessoal
+        </button>
+      </div>
     </div>
   );
 }
