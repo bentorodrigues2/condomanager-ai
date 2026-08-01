@@ -1,8 +1,6 @@
 ﻿import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./LayoutTop.css";
-import skyline from "../../assets/skyline.png";
-import logo from "../../assets/logo.png";
 
 export default function LayoutTop() {
   const navigate = useNavigate();
@@ -11,14 +9,14 @@ export default function LayoutTop() {
     <div className="layout-top-container">
       
       {/* SKYLINE */}
-      <img src={skyline} alt="Skyline" className="skyline-img" />
+      <img src="/assets/skyline.png" alt="Skyline" className="skyline-img" />
 
       {/* LOGO */}
-      <img src={logo} alt="Logo CondoManager" className="logo-img" />
+      <img src="/assets/logo.png" alt="Logo CondoManager" className="logo-img" />
 
       {/* VIDEO */}
       <div className="video-frame">
-        <video src="/intro.mp4" autoPlay muted loop />
+        <video src="/videos/intro.mp4" autoPlay muted loop />
       </div>
 
       {/* OVERLAY INFO */}
