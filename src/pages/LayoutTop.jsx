@@ -30,7 +30,14 @@ export default function LayoutTop() {
 
       {/* VIDEO AO CENTRO */}
       <div className="video-frame">
-        <video src="/videos/intro.mp4" autoPlay muted loop playsInline />
+        <video
+          src="/videos/intro.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="video-element"
+        />
       </div>
 
     </div>
