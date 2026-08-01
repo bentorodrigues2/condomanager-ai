@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { supabase } from "../supabaseClient";
+import "./Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,51 +11,55 @@ export default function Login() {
     e.preventDefault();
     setError("");
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-
-    if (error) {
-      setError(error.message);
+    if (!email || !password) {
+      setError("Email e password são obrigatórios.");
       return;
     }
 
+    localStorage.setItem("session", "active");
     window.location.href = "/dashboard";
+  };
+
+  const ativarBiometria = () => {
+    localStorage.setItem("biometria", "ativa");
+    alert("Biometria ativada!");
   };
 
   return (
     <div className="login-container">
-      <h2>Área Pessoal</h2>
+      <div className="login-box">
+        <h2>Área Pessoal</h2>
 
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            className="login-input"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <input
+            type="password"
+            className="login-input"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        {error && <p className="error">{error}</p>}
+          {error && <p style={{ color: "red" }}>{error}</p>}
 
-        <button type="submit">Entrar</button>
-      </form>
+          <button className="login-btn" type="submit">
+            Entrar
+          </button>
+        </form>
 
-      <button
-        className="biometria-btn"
-        onClick={() => localStorage.setItem("biometria", "ativa")}
-      >
-        Ativar login por biometria
-      </button>
+        <button className="biometria-btn" onClick={ativarBiometria}>
+          Ativar Biometria
+        </button>
+      </div>
     </div>
   );
 }

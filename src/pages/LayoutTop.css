@@ -83,7 +83,7 @@ html, body {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  margin-right: 0.5cm; /* deslocado 1.0 cm para a esquerda */
+  margin-right: 0.5cm; /* deslocado 1 cm para a esquerda */
 }
 
 .area-pessoal-btn:hover {
