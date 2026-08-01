@@ -35,10 +35,10 @@ html, body {
   z-index: 3;
 }
 
-/* VIDEO AO CENTRO */
+/* VIDEO AO CENTRO (subido) */
 .video-frame {
   position: absolute;
-  top: 52vh;
+  top: 42vh;              /* ← puxado mais para cima */
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
@@ -83,7 +83,7 @@ html, body {
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-  margin-right: 0.8cm; /* deslocado 0.8 cm para a esquerda */
+  margin-right: 0.5cm; /* deslocado 1.0 cm para a esquerda */
 }
 
 .area-pessoal-btn:hover {
