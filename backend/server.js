@@ -53,6 +53,8 @@ app.use("/api/ia", iaRoutes);
 const chatRoutes = require("./routes/chat");
 app.use("/api/chat", chatRoutes);
 app.use(express.json());
+const emailRouter = require("./routes/email.js");
+app.use("/email", emailRouter);
 
 app.get('/', (req, res) => {
   res.json({ status: "Backend CondoManager AI ativo" });
