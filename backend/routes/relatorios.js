@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 const PDFDocument = require("pdfkit");
@@ -6,7 +6,7 @@ const PDFDocument = require("pdfkit");
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Gerar relatório financeiro do condomínio
+// Gerar relatÃ³rio financeiro do condomÃ­nio
 router.get("/condominio/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -21,19 +21,19 @@ router.get("/condominio/:id", requireAuth, async (req, res) => {
   const doc = new PDFDocument();
   res.setHeader("Content-Type", "application/pdf");
 
-  doc.fontSize(22).text("Relatório Financeiro do Condomínio", { align: "center" });
+  doc.fontSize(22).text("RelatÃ³rio Financeiro do CondomÃ­nio", { align: "center" });
   doc.moveDown();
 
-  doc.fontSize(14).text(`Condomínio: ${fin.nome}`);
-  doc.text(`Total Despesas: ${fin.total_despesas}€`);
-  doc.text(`Total Pagamentos: ${fin.total_pagamentos}€`);
-  doc.text(`Saldo: ${fin.saldo}€`);
+  doc.fontSize(14).text(`CondomÃ­nio: ${fin.nome}`);
+  doc.text(`Total Despesas: ${fin.total_despesas}â‚¬`);
+  doc.text(`Total Pagamentos: ${fin.total_pagamentos}â‚¬`);
+  doc.text(`Saldo: ${fin.saldo}â‚¬`);
 
   doc.end();
   doc.pipe(res);
 });
 
-// Relatório da fração
+// RelatÃ³rio da fraÃ§Ã£o
 router.get("/fracao/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -48,19 +48,19 @@ router.get("/fracao/:id", requireAuth, async (req, res) => {
   const doc = new PDFDocument();
   res.setHeader("Content-Type", "application/pdf");
 
-  doc.fontSize(22).text("Relatório Financeiro da Fração", { align: "center" });
+  doc.fontSize(22).text("RelatÃ³rio Financeiro da FraÃ§Ã£o", { align: "center" });
   doc.moveDown();
 
-  doc.fontSize(14).text(`Fração: ${fin.identificador}`);
-  doc.text(`Total Pago: ${fin.total_pago}€`);
-  doc.text(`Total Devido: ${fin.total_devido}€`);
-  doc.text(`Saldo: ${fin.saldo}€`);
+  doc.fontSize(14).text(`FraÃ§Ã£o: ${fin.identificador}`);
+  doc.text(`Total Pago: ${fin.total_pago}â‚¬`);
+  doc.text(`Total Devido: ${fin.total_devido}â‚¬`);
+  doc.text(`Saldo: ${fin.saldo}â‚¬`);
 
   doc.end();
   doc.pipe(res);
 });
 
-// Relatório do proprietário
+// RelatÃ³rio do proprietÃ¡rio
 router.get("/proprietario/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -75,16 +75,17 @@ router.get("/proprietario/:id", requireAuth, async (req, res) => {
   const doc = new PDFDocument();
   res.setHeader("Content-Type", "application/pdf");
 
-  doc.fontSize(22).text("Relatório Financeiro do Proprietário", { align: "center" });
+  doc.fontSize(22).text("RelatÃ³rio Financeiro do ProprietÃ¡rio", { align: "center" });
   doc.moveDown();
 
-  doc.fontSize(14).text(`Proprietário: ${fin.nome}`);
-  doc.text(`Total Pago: ${fin.total_pago}€`);
-  doc.text(`Total Devido: ${fin.total_devido}€`);
-  doc.text(`Saldo: ${fin.saldo}€`);
+  doc.fontSize(14).text(`ProprietÃ¡rio: ${fin.nome}`);
+  doc.text(`Total Pago: ${fin.total_pago}â‚¬`);
+  doc.text(`Total Devido: ${fin.total_devido}â‚¬`);
+  doc.text(`Saldo: ${fin.saldo}â‚¬`);
 
   doc.end();
   doc.pipe(res);
 });
 
 module.exports = router;
+

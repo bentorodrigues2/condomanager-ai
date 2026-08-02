@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 // ROOT
@@ -14,7 +14,7 @@ if (!fs.existsSync(servicesDir)) fs.mkdirSync(servicesDir);
 // 1. Criar rota email.js
 const routeContent = `
 const express = require("express");
-const { supabase } = require("../supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendAutoReply = require("../services/sendAutoReply.js");
 
 const router = express.Router();
@@ -47,19 +47,19 @@ module.exports = router;
 
 fs.writeFileSync(path.join(routesDir, "email.js"), routeContent);
 
-// 2. Criar serviço sendAutoReply.js
+// 2. Criar serviÃ§o sendAutoReply.js
 const autoReplyContent = `
-const { supabase } = require("../supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendEmail = require("./sendEmail.js");
 
 module.exports = async function sendAutoReply(email) {
   const replyText = \`
-Olá,
+OlÃ¡,
 
 Recebemos a sua mensagem:
 "\${email.subject}"
 
-A administração irá analisar e responder com brevidade.
+A administraÃ§Ã£o irÃ¡ analisar e responder com brevidade.
 
 Cumprimentos,
 CondoManager AI
@@ -80,7 +80,7 @@ CondoManager AI
 
 fs.writeFileSync(path.join(servicesDir, "sendAutoReply.js"), autoReplyContent);
 
-// 3. Criar serviço sendEmail.js
+// 3. Criar serviÃ§o sendEmail.js
 const sendEmailContent = `
 const { Resend } = require("resend");
 
@@ -113,3 +113,4 @@ app.use("/email", emailRouter);`
 }
 
 console.log("=== AUTO RESPONDER INSTALADO COM SUCESSO ===");
+

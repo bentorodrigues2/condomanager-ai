@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
@@ -93,3 +93,4 @@ router.post("/resumo", requireAuth, async (req, res) => {
 });
 
 module.exports = router;
+

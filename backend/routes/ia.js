@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
@@ -6,7 +6,7 @@ const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// IA Financeira: previsão
+// IA Financeira: previsÃ£o
 router.post("/financeiro/prever", requireAuth, requireGestor, async (req, res) => {
   const { condominio_id, mes } = req.body;
 
@@ -37,15 +37,15 @@ router.post("/financeiro/prever", requireAuth, requireGestor, async (req, res) =
   res.json(data[0]);
 });
 
-// IA Operacional: sugestões
+// IA Operacional: sugestÃµes
 router.post("/operacional/sugerir", requireAuth, requireGestor, async (req, res) => {
   const { condominio_id, tipo } = req.body;
 
-  let sugestao = "Nenhuma sugestão disponível.";
+  let sugestao = "Nenhuma sugestÃ£o disponÃ­vel.";
 
-  if (tipo === "fornecedor") sugestao = "Recomenda-se contratar fornecedor com histórico de resposta rápida.";
-  if (tipo === "assembleia") sugestao = "Sugere-se marcar assembleia no início do mês para maior participação.";
-  if (tipo === "manutencao") sugestao = "Sugere-se revisão preventiva trimestral das áreas comuns.";
+  if (tipo === "fornecedor") sugestao = "Recomenda-se contratar fornecedor com histÃ³rico de resposta rÃ¡pida.";
+  if (tipo === "assembleia") sugestao = "Sugere-se marcar assembleia no inÃ­cio do mÃªs para maior participaÃ§Ã£o.";
+  if (tipo === "manutencao") sugestao = "Sugere-se revisÃ£o preventiva trimestral das Ã¡reas comuns.";
 
   const { data, error } = await supabase
     .from("ia_sugestoes_operacionais")
@@ -90,3 +90,4 @@ router.post("/conversas/resumir", requireAuth, async (req, res) => {
 });
 
 module.exports = router;
+

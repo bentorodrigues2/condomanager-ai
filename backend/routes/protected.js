@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
@@ -10,3 +10,4 @@ router.get("/admin-only", requireAuth, requireAdmin, (req, res) => {
 });
 
 module.exports = router;
+

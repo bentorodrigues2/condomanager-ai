@@ -1,11 +1,11 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Listar tickets de manutenção
+// Listar tickets de manutenÃ§Ã£o
 router.get("/", requireAuth, async (req, res) => {
   const { data, error } = await supabase
     .from("tickets_manutencao")
@@ -45,3 +45,4 @@ router.post("/estado/:id", requireAuth, async (req, res) => {
 });
 
 module.exports = router;
+

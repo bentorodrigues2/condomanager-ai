@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
@@ -6,12 +6,12 @@ const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Gerar quotas para todas as frações de um condomínio
+// Gerar quotas para todas as fraÃ§Ãµes de um condomÃ­nio
 router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res) => {
   const { condominio_id } = req.params;
   const { periodo, valor } = req.body;
 
-  // Obter frações do condomínio
+  // Obter fraÃ§Ãµes do condomÃ­nio
   const { data: fracoes, error: errF } = await supabase
     .from("fracoes")
     .select("id")
@@ -37,7 +37,7 @@ router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res
   res.json({ status: "quotas_geradas", data });
 });
 
-// Obter quotas de uma fração
+// Obter quotas de uma fraÃ§Ã£o
 router.get("/fracao/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -53,3 +53,4 @@ router.get("/fracao/:id", requireAuth, async (req, res) => {
 });
 
 module.exports = router;
+

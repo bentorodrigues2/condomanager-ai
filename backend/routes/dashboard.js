@@ -1,11 +1,11 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Dashboard do condomínio
+// Dashboard do condomÃ­nio
 router.get("/condominio/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -19,7 +19,7 @@ router.get("/condominio/:id", requireAuth, async (req, res) => {
   res.json(data);
 });
 
-// Dashboard da fração
+// Dashboard da fraÃ§Ã£o
 router.get("/fracao/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -33,7 +33,7 @@ router.get("/fracao/:id", requireAuth, async (req, res) => {
   res.json(data);
 });
 
-// Dashboard do proprietário
+// Dashboard do proprietÃ¡rio
 router.get("/proprietario/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -48,3 +48,4 @@ router.get("/proprietario/:id", requireAuth, async (req, res) => {
 });
 
 module.exports = router;
+

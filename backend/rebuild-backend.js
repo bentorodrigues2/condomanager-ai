@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const backendPath = path.join(__dirname);
@@ -14,7 +14,7 @@ const baseDeps = {
   pdfkit: "^0.13.0"
 };
 
-// Função para detetar dependências usadas no código
+// FunÃ§Ã£o para detetar dependÃªncias usadas no cÃ³digo
 function scanDir(dir) {
   const files = fs.readdirSync(dir);
   let requires = [];
@@ -47,9 +47,9 @@ function scanDir(dir) {
   return requires;
 }
 
-console.log("🔍 A analisar backend...\n");
+console.log("ðŸ” A analisar backend...\n");
 
-// 1. Detetar dependências usadas
+// 1. Detetar dependÃªncias usadas
 const usedDeps = scanDir(backendPath);
 
 // 2. Remover duplicados
@@ -60,7 +60,7 @@ const finalDeps = { ...baseDeps };
 
 uniqueDeps.forEach((dep) => {
   if (!finalDeps[dep]) {
-    finalDeps[dep] = "*"; // placeholder — npm install vai resolver
+    finalDeps[dep] = "*"; // placeholder â€” npm install vai resolver
   }
 });
 
@@ -78,6 +78,7 @@ const newPackageJson = {
 
 fs.writeFileSync(packageJsonPath, JSON.stringify(newPackageJson, null, 2));
 
-console.log("📦 Novo package.json criado com sucesso!");
-console.log("📦 Dependências detectadas:", uniqueDeps);
-console.log("\n🏁 Agora corre: npm install");
+console.log("ðŸ“¦ Novo package.json criado com sucesso!");
+console.log("ðŸ“¦ DependÃªncias detectadas:", uniqueDeps);
+console.log("\nðŸ Agora corre: npm install");
+

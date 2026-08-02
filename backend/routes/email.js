@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendAutoReply = require("../services/sendAutoReply.js");
@@ -29,3 +29,4 @@ router.post("/incoming", async (req, res) => {
 });
 
 module.exports = router;
+

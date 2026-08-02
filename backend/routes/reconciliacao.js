@@ -1,4 +1,4 @@
-
+﻿
 const express = require("express");
 const router = express.Router();
 
@@ -6,7 +6,7 @@ const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Registar evento de reconciliação
+// Registar evento de reconciliaÃ§Ã£o
 router.post("/evento", requireAuth, requireGestor, async (req, res) => {
   const { transacao_id, metodo, valor, estado, detalhes } = req.body;
 
@@ -20,7 +20,7 @@ router.post("/evento", requireAuth, requireGestor, async (req, res) => {
   res.json(data[0]);
 });
 
-// Listar reconciliações
+// Listar reconciliaÃ§Ãµes
 router.get("/", requireAuth, requireGestor, async (req, res) => {
   const { data, error } = await supabase
     .from("reconciliacao_financeira")
@@ -33,3 +33,4 @@ router.get("/", requireAuth, requireGestor, async (req, res) => {
 });
 
 module.exports = router;
+

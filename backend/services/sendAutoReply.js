@@ -1,15 +1,15 @@
-
-const { supabase } = require("../supabaseNodeClient.cjs");
+﻿
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendEmail = require("./sendEmail.js");
 
 module.exports = async function sendAutoReply(email) {
   const replyText = `
-Olá,
+OlÃ¡,
 
 Recebemos a sua mensagem:
 "${email.subject}"
 
-A administração irá analisar e responder com brevidade.
+A administraÃ§Ã£o irÃ¡ analisar e responder com brevidade.
 
 Cumprimentos,
 CondoManager AI
@@ -26,3 +26,4 @@ CondoManager AI
     })
     .eq("id", email.id);
 };
+
