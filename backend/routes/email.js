@@ -1,6 +1,6 @@
 
 const express = require("express");
-const { supabase } = require("../supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendAutoReply = require("../services/sendAutoReply.js");
 
 const router = express.Router();
