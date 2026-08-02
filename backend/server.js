@@ -60,6 +60,9 @@ app.get('/', (req, res) => {
   res.json({ status: "Backend CondoManager AI ativo" });
 });
 
-app.listen(3001, () => {
-  console.log("🚀 Backend a correr na porta 3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Backend a correr na porta ${PORT}`);
 });
+
