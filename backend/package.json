@@ -15,6 +15,7 @@
     "jsonwebtoken": "^9.0.2",
     "node-fetch": "^2.7.0",
     "path": "*",
-    "pdfkit": "^0.13.0"
+    "pdfkit": "^0.13.0",
+    "resend": "^6.18.1"
   }
 }
