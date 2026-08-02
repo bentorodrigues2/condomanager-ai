@@ -1,14 +1,10 @@
+import { useAuth } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import useRole from '../hooks/useRole';
+export default function ProtectedRoute({ children }) {
+  const { user } = useAuth();
 
-export default function ProtectedRoute({ children, allow }) {
-  const role = useRole();
-
-  if (!allow.includes(role)) {
-    return <Navigate to="/acesso-negado" replace />;
-  }
+  if (!user) return <Navigate to="/login" replace />;
 
   return children;
 }

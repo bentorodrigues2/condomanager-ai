@@ -1,50 +1,51 @@
-
-import React, { useState } from 'react';
-import { useUser } from '../context/UserContext';
+import { useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
 export default function Login() {
-  const { setUser } = useUser();
-  const [email, setEmail] = useState('');
-  const [role, setRole] = useState('gestor');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  function entrar() {
-    setUser({ email, role });
+  async function handleLogin(e) {
+    e.preventDefault();
+    setError("");
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
+
+    if (error) {
+      setError(error.message);
+      return;
+    }
+
+    window.location.href = "/dashboard";
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Login</h1>
+    <div className="login-container">
+      <form onSubmit={handleLogin}>
+        <h2>Login</h2>
 
-      <input
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{ padding: '1rem', width: '100%', marginBottom: '1rem' }}
-      />
+        {error && <p className="error">{error}</p>}
 
-      <select
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
-        style={{ padding: '1rem', width: '100%', marginBottom: '1rem' }}
-      >
-        <option value="gestor">Gestor</option>
-        <option value="proprietario">Proprietário</option>
-        <option value="fornecedor">Fornecedor</option>
-      </select>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
 
-      <button
-        onClick={entrar}
-        style={{
-          padding: '1rem',
-          width: '100%',
-          backgroundColor: 'var(--primary)',
-          color: '#fff',
-          border: 'none',
-          borderRadius: '8px'
-        }}
-      >
-        Entrar
-      </button>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+
+        <button type="submit">Entrar</button>
+      </form>
     </div>
   );
 }
