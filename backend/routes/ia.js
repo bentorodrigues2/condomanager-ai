@@ -4,7 +4,7 @@ const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // IA Financeira: previsão
 router.post("/financeiro/prever", requireAuth, requireGestor, async (req, res) => {

@@ -4,7 +4,7 @@ const fs = require("fs");
 
 console.log("\n🔧 A criar módulo REAL: Dashboard Financeiro...\n");
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 // ------------------------------------------------------
 // 1. Criar views financeiras (versão compatível com o teu schema real)

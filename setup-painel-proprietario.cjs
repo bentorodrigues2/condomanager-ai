@@ -4,7 +4,7 @@ const fs = require("fs");
 
 console.log("\n🔧 A criar módulo REAL: Painel do Proprietário...\n");
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 // ------------------------------------------------------
 // 1. Criar rota backend agregada

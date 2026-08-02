@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { supabase } = require('../supabase/supabaseNodeClient.cjs');
+const { supabase } = require('../../backend/supabase/supabaseNodeClient.cjs');
 
 (async () => {
   console.log("\n🔍 A listar roles...\n");

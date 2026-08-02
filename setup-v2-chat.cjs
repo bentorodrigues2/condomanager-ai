@@ -5,7 +5,7 @@ const { execSync } = require("child_process");
 
 console.log("\n🔧 A criar módulo V2: Chat Interno (Mensagens, Grupos, Anexos, IA)...\n");
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 // ------------------------------------------------------
 // 1. Criar tabelas de chat via RPC

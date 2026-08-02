@@ -7,7 +7,7 @@ console.log("\n🔧 A criar módulo REAL: Proprietários...\n");
 // ------------------------------------------------------
 // 1. Criar tabela no Supabase
 // ------------------------------------------------------
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 async function criarTabela() {
   console.log("📌 A criar tabela 'proprietarios' no Supabase...");

@@ -4,7 +4,7 @@ const fs = require("fs");
 
 console.log("\n🔧 A criar módulo REAL: Automação de Cobranças...\n");
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 // ------------------------------------------------------
 // 1. Criar tabela cobrancas

@@ -4,7 +4,7 @@ const router = express.Router();
 const PDFDocument = require("pdfkit");
 
 const requireAuth = require("../middleware/requireAuth");
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // Criar pagamento online (início)
 router.post("/criar", requireAuth, async (req, res) => {

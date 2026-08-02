@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // Obter alertas do utilizador
 router.get("/", requireAuth, async (req, res) => {

@@ -1,5 +1,5 @@
 
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 module.exports = function requireRole(role) {
   return async function (req, res, next) {

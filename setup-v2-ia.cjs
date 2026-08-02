@@ -5,7 +5,7 @@ const { execSync } = require("child_process");
 
 console.log("\n🔧 A criar módulo V2: IA Avançada (Financeira, Operacional, Documentos, Conversas)...\n");
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 // ------------------------------------------------------
 // 1. Criar tabelas IA via RPC

@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const requireAuth = require("../middleware/requireAuth");
 
 // Criar conversa

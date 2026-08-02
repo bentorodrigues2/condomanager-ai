@@ -7,7 +7,7 @@ console.log("\n🔧 A criar módulo REAL: Assembleias...\n");
 // ------------------------------------------------------
 // 1. Criar tabelas no Supabase
 // ------------------------------------------------------
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 async function criarTabelas() {
   console.log("📌 A criar tabelas 'assembleias' e 'votacoes' no Supabase...");

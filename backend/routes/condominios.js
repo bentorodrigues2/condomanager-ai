@@ -8,7 +8,7 @@ const requireGestor = require("../middleware/requireGestor");
 const requireOwner = require("../middleware/requireOwner");
 const requireViewer = require("../middleware/requireViewer");
 
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // LISTAR
 router.get("/", requireAuth, async (req, res) => {

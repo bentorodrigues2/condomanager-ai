@@ -4,7 +4,7 @@ const router = express.Router();
 const fetch = require("node-fetch");
 
 const requireAuth = require("../middleware/requireAuth");
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // Registar dispositivo mobile
 router.post("/registrar", requireAuth, async (req, res) => {

@@ -6,7 +6,7 @@ const requireAuth = require("../middleware/requireAuth");
 const requireAdmin = require("../middleware/requireAdmin");
 const requireGestor = require("../middleware/requireGestor");
 
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // LISTAR
 router.get("/", requireAuth, async (req, res) => {

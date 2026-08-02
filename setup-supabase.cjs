@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { supabase } = require("./src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("./backend/supabase/supabaseNodeClient.cjs");
 
 console.log("\n🔧 Iniciando configuração Supabase para CondoManager AI...\n");
 

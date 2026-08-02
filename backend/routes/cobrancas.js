@@ -5,7 +5,7 @@ const PDFDocument = require("pdfkit");
 
 const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
-const { supabase } = require("../../src/supabase/supabaseNodeClient.cjs");
+const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 // Gerar cobrança automática para quotas pendentes
 router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res) => {
