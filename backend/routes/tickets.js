@@ -1,11 +1,11 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Listar tickets de manutenÃ§Ã£o
+// Listar tickets de manutenção
 router.get("/", requireAuth, async (req, res) => {
   const { data, error } = await supabase
     .from("tickets_manutencao")
@@ -18,11 +18,9 @@ router.get("/", requireAuth, async (req, res) => {
 
 // Criar ticket
 router.post("/", requireAuth, async (req, res) => {
-  const { condominio_id, fracao_id, proprietario_id, fornecedor_id, titulo, descricao, prioridade } = req.body;
 
   const { data, error } = await supabase
     .from("tickets_manutencao")
-    .insert([{ condominio_id, fracao_id, proprietario_id, fornecedor_id, titulo, descricao, prioridade }])
     .select();
 
   if (error) return res.status(500).json({ error });

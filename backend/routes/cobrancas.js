@@ -1,4 +1,4 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 const PDFDocument = require("pdfkit");
@@ -7,7 +7,7 @@ const requireAuth = require("../middleware/requireAuth");
 const requireGestor = require("../middleware/requireGestor");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Gerar cobranÃ§a automÃ¡tica para quotas pendentes
+// Gerar cobrança automática para quotas pendentes
 router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res) => {
   const { condominio_id } = req.params;
   const { periodo } = req.body;
@@ -22,7 +22,7 @@ router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res
 
   if (errQ) return res.status(500).json({ error: errQ });
 
-  // Obter proprietÃ¡rios das fraÃ§Ãµes
+  // Obter proprietários das frações
   const fracaoIds = quotas.map(q => q.fracao_id);
 
   const { data: fracoes, error: errF } = await supabase
@@ -32,7 +32,7 @@ router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res
 
   if (errF) return res.status(500).json({ error: errF });
 
-  // Criar cobranÃ§as
+  // Criar cobranças
   const cobrancas = quotas.map(q => {
     const fr = fracoes.find(f => f.id === q.fracao_id);
     return {
@@ -55,7 +55,7 @@ router.post("/gerar/:condominio_id", requireAuth, requireGestor, async (req, res
   res.json({ status: "cobrancas_geradas", data });
 });
 
-// Gerar PDF de cobranÃ§a
+// Gerar PDF de cobrança
 router.get("/pdf/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
@@ -70,18 +70,18 @@ router.get("/pdf/:id", requireAuth, async (req, res) => {
   const doc = new PDFDocument();
   res.setHeader("Content-Type", "application/pdf");
 
-  doc.fontSize(22).text("Aviso de CobranÃ§a", { align: "center" });
+  doc.fontSize(22).text("Aviso de Cobrança", { align: "center" });
   doc.moveDown();
 
-  doc.fontSize(14).text(`PerÃ­odo: ${c.periodo}`);
-  doc.text(`Valor: ${c.valor}â‚¬`);
+  doc.fontSize(14).text(`Período: ${c.periodo}`);
+  doc.text(`Valor: ${c.valor}€`);
   doc.text(`Estado: ${c.estado}`);
 
   doc.end();
   doc.pipe(res);
 });
 
-// Obter cobranÃ§as da fraÃ§Ã£o
+// Obter cobranças da fração
 router.get("/fracao/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 

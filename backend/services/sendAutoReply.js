@@ -1,15 +1,15 @@
-﻿
+
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendEmail = require("./sendEmail.js");
 
 module.exports = async function sendAutoReply(email) {
   const replyText = `
-OlÃ¡,
+Olá,
 
 Recebemos a sua mensagem:
 "${email.subject}"
 
-A administraÃ§Ã£o irÃ¡ analisar e responder com brevidade.
+A administração irá analisar e responder com brevidade.
 
 Cumprimentos,
 CondoManager AI

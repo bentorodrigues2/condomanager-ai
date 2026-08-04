@@ -1,4 +1,4 @@
-﻿const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 
 const backendPath = path.join(__dirname);
@@ -39,13 +39,13 @@ function scanDir(dir) {
   return requires;
 }
 
-console.log("ðŸ” A analisar dependÃªncias usadas no backend...\n");
+console.log("🔍 A analisar dependências usadas no backend...\n");
 
 const usedDeps = scanDir(backendPath);
 const missing = usedDeps.filter((d) => !declaredDeps.includes(d));
 
-console.log("ðŸ“¦ DependÃªncias usadas no cÃ³digo:", usedDeps);
-console.log("\nâŒ DependÃªncias em falta:", missing);
+console.log("📦 Dependências usadas no código:", usedDeps);
+console.log("\n❌ Dependências em falta:", missing);
 
-console.log("\nðŸ ConcluÃ­do.");
+console.log("\n🏁 Concluído.");
 

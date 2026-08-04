@@ -1,4 +1,4 @@
-﻿
+
 const express = require("express");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 const sendAutoReply = require("../services/sendAutoReply.js");

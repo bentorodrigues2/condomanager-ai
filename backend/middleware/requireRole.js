@@ -1,4 +1,4 @@
-﻿
+
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
 module.exports = function requireRole(role) {
@@ -6,7 +6,7 @@ module.exports = function requireRole(role) {
     const userId = req.user?.sub;
 
     if (!userId) {
-      return res.status(401).json({ error: "Utilizador nÃ£o autenticado" });
+      return res.status(401).json({ error: "Utilizador não autenticado" });
     }
 
     const { data, error } = await supabase

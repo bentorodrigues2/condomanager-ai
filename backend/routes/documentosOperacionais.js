@@ -1,4 +1,4 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 
@@ -19,11 +19,9 @@ router.get("/", requireAuth, async (req, res) => {
 
 // Criar documento operacional
 router.post("/", requireAuth, requireGestor, async (req, res) => {
-  const { condominio_id, fornecedor_id, tipo, nome, url } = req.body;
 
   const { data, error } = await supabase
     .from("documentos_operacionais")
-    .insert([{ condominio_id, fornecedor_id, tipo, nome, url }])
     .select();
 
   if (error) return res.status(500).json({ error });

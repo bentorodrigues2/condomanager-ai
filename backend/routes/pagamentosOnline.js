@@ -1,4 +1,4 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 const PDFDocument = require("pdfkit");
@@ -6,7 +6,7 @@ const PDFDocument = require("pdfkit");
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Criar pagamento online (inÃ­cio)
+// Criar pagamento online (início)
 router.post("/criar", requireAuth, async (req, res) => {
   const { proprietario_id, fracao_id, condominio_id, metodo, valor } = req.body;
 
@@ -54,10 +54,10 @@ router.get("/recibo/:id", requireAuth, async (req, res) => {
   doc.fontSize(22).text("Recibo de Pagamento Online", { align: "center" });
   doc.moveDown();
 
-  doc.fontSize(14).text(`MÃ©todo: ${pagamento.metodo}`);
-  doc.text(`Valor: ${pagamento.valor}â‚¬`);
+  doc.fontSize(14).text(`Método: ${pagamento.metodo}`);
+  doc.text(`Valor: ${pagamento.valor}€`);
   doc.text(`Estado: ${pagamento.estado}`);
-  doc.text(`TransaÃ§Ã£o: ${pagamento.transacao_id}`);
+  doc.text(`Transação: ${pagamento.transacao_id}`);
 
   doc.end();
   doc.pipe(res);

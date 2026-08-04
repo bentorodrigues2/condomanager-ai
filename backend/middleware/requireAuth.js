@@ -1,4 +1,4 @@
-﻿
+
 const jwt = require("jsonwebtoken");
 
 module.exports = function requireAuth(req, res, next) {
@@ -13,7 +13,7 @@ module.exports = function requireAuth(req, res, next) {
     req.user = decoded;
     next();
   } catch (err) {
-    return res.status(401).json({ error: "Token invÃ¡lido" });
+    return res.status(401).json({ error: "Token inválido" });
   }
 };
 

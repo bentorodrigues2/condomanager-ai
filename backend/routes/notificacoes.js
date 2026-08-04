@@ -1,11 +1,11 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Obter notificaÃ§Ãµes do utilizador
+// Obter notificações do utilizador
 router.get("/", requireAuth, async (req, res) => {
   const user_id = req.user.id;
 
@@ -35,7 +35,7 @@ router.post("/ler/:id", requireAuth, async (req, res) => {
   res.json(data[0]);
 });
 
-// Criar notificaÃ§Ã£o (usado internamente)
+// Criar notificação (usado internamente)
 router.post("/criar", requireAuth, async (req, res) => {
   const { user_id, tipo, titulo, mensagem } = req.body;
 

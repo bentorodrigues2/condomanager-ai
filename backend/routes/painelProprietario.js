@@ -1,15 +1,15 @@
-﻿
+
 const express = require("express");
 const router = express.Router();
 
 const requireAuth = require("../middleware/requireAuth");
 const { supabase } = require("../supabase/supabaseNodeClient.cjs");
 
-// Painel completo do proprietÃ¡rio
+// Painel completo do proprietário
 router.get("/:id", requireAuth, async (req, res) => {
   const { id } = req.params;
 
-  // Dados do proprietÃ¡rio
+  // Dados do proprietário
   const { data: proprietario, error: errP } = await supabase
     .from("proprietarios")
     .select("*")
@@ -18,7 +18,7 @@ router.get("/:id", requireAuth, async (req, res) => {
 
   if (errP || !proprietario) return res.status(500).json({ error: errP });
 
-  // FraÃ§Ãµes do proprietÃ¡rio
+  // Frações do proprietário
   const { data: fracoes, error: errF } = await supabase
     .from("fracoes")
     .select("*")
@@ -34,7 +34,7 @@ router.get("/:id", requireAuth, async (req, res) => {
     .select("*")
     .in("fracao_id", fracaoIds);
 
-  // CobranÃ§as
+  // Cobranças
   const { data: cobrancas } = await supabase
     .from("cobrancas")
     .select("*")
@@ -57,7 +57,7 @@ router.get("/:id", requireAuth, async (req, res) => {
     .from("assembleias")
     .select("*");
 
-  // NotificaÃ§Ãµes
+  // Notificações
   const { data: notificacoes } = await supabase
     .from("notificacoes")
     .select("*")

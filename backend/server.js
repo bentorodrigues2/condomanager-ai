@@ -1,4 +1,4 @@
-﻿
+
 const express = require('express');
 const cors = require('cors');
 
@@ -34,8 +34,6 @@ const cobrancasRoutes = require("./routes/cobrancas");
 app.use("/api/cobrancas", cobrancasRoutes);
 const painelProprietarioRoutes = require("./routes/painelProprietario");
 app.use("/api/proprietario/painel", painelProprietarioRoutes);
-const fornecedoresRoutes = require("./routes/fornecedores");
-app.use("/api/fornecedores", fornecedoresRoutes);
 const ticketsRoutes = require("./routes/tickets");
 app.use("/api/tickets", ticketsRoutes);
 const reservasRoutes = require("./routes/reservas");
@@ -63,7 +61,7 @@ app.get('/', (req, res) => {
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
-  console.log(`ðŸš€ Backend a correr na porta ${PORT}`);
+  console.log(`🚀 Backend a correr na porta ${PORT}`);
 });
 
 
