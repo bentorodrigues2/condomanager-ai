@@ -3,19 +3,18 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig(({ mode }) => {
-  // Carrega variÃ¡veis do .env.local na raiz
-  const env = loadEnv(mode, path.resolve(__dirname, 'pwa'), "");
+  const env = loadEnv(mode, path.resolve(__dirname, "pwa"), "");
 
   return {
-    root: path.resolve(__dirname, "pwa"), // ðŸ‘‰ forÃ§a o Vite a usar a pasta pwa
+    root: path.resolve(__dirname, "pwa"),
     plugins: [react()],
     base: "/",
     define: {
-      "import.meta.env.VITE_SUPABASE_URL": JSON.stringify(env.VITE_SUPABASE_URL),
-      "import.meta.env.VITE_SUPABASE_KEY": JSON.stringify(env.VITE_SUPABASE_KEY),
+      "process.env": env,
     },
     server: {
       port: 5173,
+      strictPort: true,
       host: true,
     },
     build: {
@@ -24,4 +23,3 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
-

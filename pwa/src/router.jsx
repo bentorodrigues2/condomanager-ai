@@ -1,5 +1,8 @@
-
 import { Routes, Route } from "react-router-dom";
+
+import Login from "./auth/Login.jsx";
+import Register from "./auth/Register.jsx";
+
 import DashboardAdministrador from "./pages/administrador/DashboardAdministrador.jsx";
 import DashboardCondomino from "./pages/condomino/DashboardCondomino.jsx";
 import DashboardGestor from "./pages/gestor/DashboardGestor.jsx";
@@ -23,6 +26,11 @@ export default function AppRouter({ role }) {
 
   return (
     <Routes>
+      {/* Rotas públicas */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      {/* Rotas protegidas (temporárias até integrar AI Studio) */}
       <Route path="/*" element={routes[role] ?? <div>Perfil desconhecido</div>} />
     </Routes>
   );

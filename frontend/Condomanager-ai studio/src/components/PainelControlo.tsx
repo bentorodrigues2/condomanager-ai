@@ -1,0 +1,214 @@
+import React from "react";
+import { Predio, Conta, Fracao, Movimento, Aviso } from "../types";
+import { exportToXLS } from "../utils";
+import { 
+  Building, DoorOpen, Users, FileText, Hammer, Brush, 
+  Wallet, Truck, MessageSquare, Brain, Sparkles, 
+  AlertTriangle, BarChart2
+} from "lucide-react";
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+
+interface PainelControloProps {
+  predio: Predio;
+  contas: Conta[];
+  fracoes: Fracao[];
+  movements: Movimento[];
+  avisos: Aviso[];
+  ocorrenciasCount?: number;
+  reservasCount?: number;
+  mensagensCount?: number;
+  notificacoesCount?: number;
+}
+
+export function PainelControlo({ 
+  predio, 
+  contas, 
+  fracoes, 
+  movements, 
+  avisos,
+  ocorrenciasCount = 2,
+  reservasCount = 1,
+  mensagensCount = 2,
+  notificacoesCount = 4
+}: PainelControloProps) {
+
+  // Global list references derived from props
+  const predioFracoes = fracoes.filter(f => f.id_predio === predio.id_predio);
+  const predioMovements = movements.filter(m => m.id_predio === predio.id_predio);
+  const predioAvisos = avisos.filter(a => a.id_predio === predio.id_predio);
+
+  // Calculate dynamic stats
+  const totalFundoReserva = predioMovements
+    .filter(m => m.categoria === "Fundo de Reserva")
+    .reduce((acc, curr) => acc + (curr.tipo === "Receita" || curr.tipo === "RECEITA" ? curr.valor : -curr.valor), 0);
+
+  const totalSaldoCaixa = predioMovements
+    .reduce((acc, curr) => acc + (curr.tipo === "Receita" || curr.tipo === "RECEITA" ? curr.valor : -curr.valor), 0);
+
+  // Mock data for Recharts Chart
+  const chartData = [
+    { name: "Jan", Receitas: 1200, Despesas: 900 },
+    { name: "Fev", Receitas: 1400, Despesas: 1100 },
+    { name: "Mar", Receitas: 1200, Despesas: 1300 },
+    { name: "Abr", Receitas: 1800, Despesas: 950 },
+    { name: "Mai", Receitas: 1900, Despesas: 1500 },
+    { name: "Jun", Receitas: 1500, Despesas: 1200 },
+    { name: "Jul", Receitas: 2400, Despesas: 1700 }
+  ];
+
+  return (
+    <div className="space-y-6">
+      {/* 13 MANDATORY INDICATORS (FROM DOCUMENT I, PAGE 2 & 3) */}
+      <div className="space-y-2">
+        <h4 className="text-xs font-bold text-[#333] uppercase tracking-wider">Módulo de Administração: Os 13 Indicadores Ativos</h4>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2.5">
+          {[
+            { name: "Prédios Ativos", val: "1 Edifício", color: "text-blue-600 bg-blue-50/70 border-blue-100" },
+            { name: "Condóminos", val: `${predioFracoes.length} Frações`, color: "text-emerald-600 bg-emerald-50/70 border-emerald-100" },
+            { name: "Inquilinos", val: `${predioFracoes.filter(f => f.is_arrendada).length} Ativos`, color: "text-amber-600 bg-amber-50/70 border-amber-100" },
+            { name: "Intervenções", val: `${ocorrenciasCount} Registadas`, color: "text-red-600 bg-red-50/70 border-red-100" },
+            { name: "Obras Gerais", val: "1 Ativa", color: "text-purple-600 bg-purple-50/70 border-purple-100" },
+            { name: "Escala Limpeza", val: "3 Áreas", color: "text-indigo-600 bg-indigo-50/70 border-indigo-100" },
+            { name: "Documentos IA", val: "4 Arquivados", color: "text-pink-600 bg-pink-50/70 border-pink-100" },
+            { name: "Cobranças", val: `${predioAvisos.filter(a => a.estado === 'Pendente').length} Pendentes`, color: "text-amber-700 bg-amber-50/40 border-amber-200" },
+            { name: "Alertas Jurídicos", val: "1 Ativo", color: "text-red-700 bg-red-50/40 border-red-200" },
+            { name: "Contratos Fornecedores", val: "2 Ativos", color: "text-teal-600 bg-teal-50/70 border-teal-100" },
+            { name: "Sondagens IA", val: "1 Ativa", color: "text-cyan-600 bg-cyan-50/70 border-cyan-100" },
+            { name: "Fundo Reserva", val: `${totalFundoReserva.toLocaleString("pt-PT")} €`, color: "text-violet-600 bg-violet-50/70 border-violet-100" },
+            { name: "Saldo em Caixa", val: `${totalSaldoCaixa.toLocaleString("pt-PT")} €`, color: "text-indigo-700 bg-indigo-50/60 border-indigo-200" }
+          ].map((ind, idx) => (
+            <div key={idx} className={`p-2.5 rounded-lg border shadow-xs text-center ${ind.color}`}>
+              <span className="text-[9px] font-bold block text-slate-500 uppercase truncate leading-tight">{ind.name}</span>
+              <span className="text-xs font-black block mt-1 tracking-tight">{ind.val}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Main Row: Chart + IA Alerts Side-by-Side to eliminate extra scrolling */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Chart */}
+        <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-4">
+          <div className="flex justify-between items-center">
+            <div>
+              <h3 className="text-sm font-bold text-slate-800">Transparência Orçamental e Fluxo de Caixa</h3>
+              <p className="text-xs text-slate-400">Receitas de quotas vs. despesas de manutenção no ano corrente.</p>
+            </div>
+            <span className="text-[10px] font-mono font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">Ano 2026</span>
+          </div>
+          <div className="h-48 text-xs font-bold">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorRec" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                  </linearGradient>
+                  <linearGradient id="colorDes" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#ef4444" stopOpacity={0.2}/>
+                    <stop offset="95%" stopColor="#ef4444" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Area type="monotone" dataKey="Receitas" stroke="#10b981" fillOpacity={1} fill="url(#colorRec)" strokeWidth={2} />
+                <Area type="monotone" dataKey="Despesas" stroke="#ef4444" fillOpacity={1} fill="url(#colorDes)" strokeWidth={2} />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* IA Assistente & Alerts (Immediately visible, no artificial scroll barrier) */}
+        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs flex flex-col justify-between min-h-[250px]">
+          <div>
+            <h3 className="text-sm font-bold text-slate-800 mb-1 flex items-center justify-between">
+              <span>IA Assistente Automático</span>
+              <span className="flex h-2 w-2 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+            </h3>
+            <p className="text-xs text-slate-400 mb-4">Reconciliação e alertas pendentes de validação.</p>
+            
+            <div className="space-y-3">
+              <div className="flex items-start space-x-2 text-xs bg-amber-50 border border-amber-100 p-2.5 rounded-lg text-amber-800">
+                <AlertTriangle className="h-4 w-4 shrink-0 text-amber-500 mt-0.5" />
+                <div>
+                  <span className="font-bold block">Quotas em Atraso</span>
+                  <span>A fração D possui 3 quotas em falta. Cobrança extrajudicial recomendada.</span>
+                </div>
+              </div>
+              <div className="flex items-start space-x-2 text-xs bg-indigo-50 border border-indigo-100 p-2.5 rounded-lg text-indigo-800">
+                <Brain className="h-4 w-4 shrink-0 text-indigo-500 mt-0.5" />
+                <div>
+                  <span className="font-bold block">Análise de Contratos</span>
+                  <span>O contrato de Limpeza expira em 30 dias. IA sugere rever o reajuste de 2%.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button 
+            onClick={() => alert("Resumo IA gerado e enviado para a caixa de correio da administração.")}
+            className="mt-4 w-full bg-[#1A1A1A] hover:bg-[#333] text-white font-bold py-2 rounded-lg text-xs cursor-pointer flex items-center justify-center space-x-1.5 transition-colors"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
+            <span>Gerar Relatório de IA</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Recent Transactions Table */}
+      <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="text-sm font-bold text-slate-800">Transações e Movimentos de Caixa</h3>
+            <p className="text-xs text-slate-400">Lançamentos confirmados e reconciliados recentemente.</p>
+          </div>
+          <button 
+            onClick={() => exportToXLS("Saldos_Movimentos", ["Data", "Tipo", "Descricao", "Valor"], predioMovements.map(m=>[m.data, m.tipo, m.descricao, m.valor.toString()]))} 
+            className="bg-emerald-50 border border-emerald-100 text-emerald-700 font-bold px-3 py-1.5 rounded-lg text-[10px] hover:bg-emerald-100 cursor-pointer transition-colors"
+          >
+            Exportar Saldos (Excel)
+          </button>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse text-xs">
+            <thead>
+              <tr className="border-b border-slate-150 text-slate-400 font-bold">
+                <th className="py-2">Data</th>
+                <th className="py-2">Tipo</th>
+                <th className="py-2">Descrição</th>
+                <th className="py-2">Categoria</th>
+                <th className="py-2 text-right">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {predioMovements.slice(0, 5).map((m) => (
+                <tr key={m.id_mov} className="border-b border-slate-100 hover:bg-slate-50/50">
+                  <td className="py-2.5 font-mono text-slate-500">{m.data}</td>
+                  <td className="py-2.5">
+                    <span className={`px-2 py-0.5 rounded-full font-bold text-[9px] ${
+                      m.tipo === "Receita" || m.tipo === "RECEITA" ? "bg-emerald-100 text-emerald-800" : "bg-red-100 text-red-800"
+                    }`}>
+                      {m.tipo}
+                    </span>
+                  </td>
+                  <td className="py-2.5 font-medium text-slate-700">{m.descricao}</td>
+                  <td className="py-2.5 text-slate-500">{m.categoria}</td>
+                  <td className={`py-2.5 text-right font-bold ${
+                    m.tipo === "Receita" || m.tipo === "RECEITA" ? "text-emerald-600" : "text-red-600"
+                  }`}>
+                    {m.tipo === "Receita" || m.tipo === "RECEITA" ? "+" : "-"}{m.valor.toFixed(2)} €
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
