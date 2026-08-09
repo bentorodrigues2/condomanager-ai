@@ -1,3 +1,5 @@
+import Condominios from "./condominios/Condominios";
+import AIStudioApp from "./aistudio/AIStudioApp";
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -35,6 +37,8 @@ export default function App() {
           </div>
 
           <Routes>
+        <Route path="/condominios" element={<ProtectedRoute><Condominios /></ProtectedRoute>} />
+        <Route path="/app/*" element={<AIStudioApp />} />
             <Route path="/" element={<AuthGate requiredRole="admin"><Dashboard /></AuthGate>} />
             <Route path="/predios" element={<AuthGate requiredRole="gestor"><Predios /></AuthGate>} />
             <Route path="/notificacoes" element={<AuthGate requiredRole="gestor"><Notificacoes /></AuthGate>} />
@@ -45,3 +49,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

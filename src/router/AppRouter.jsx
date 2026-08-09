@@ -64,6 +64,9 @@ export default function AppRouter() {
   return (
     <Routes>
 
+        <Route path="/settings/notifications" element={<NotificationSettings />} />
+  
+
       {/* Página inicial premium — FORA do AppLayout */}
       <Route path="/" element={<LayoutTop />} />
 
