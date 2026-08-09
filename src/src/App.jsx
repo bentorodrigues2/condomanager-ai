@@ -1,12 +1,23 @@
-import Login from "./components/Login";
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./router/AppRouter";
+import { useState } from "react";
+import IntroVideo from "./components/IntroVideo";
+import "./components/IntroVideo.css";
 
-export default function App() {
+function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <BrowserRouter>
-      <AppRouter />
-    </BrowserRouter>
+    <div className="app-container">
+      {!loggedIn && <IntroVideo />}
+
+      <div className="content-wrapper">
+        {loggedIn ? (
+          <Dashboard />
+        ) : (
+          <LoginForm onLogin={() => setLoggedIn(true)} />
+        )}
+      </div>
+    </div>
   );
 }
+
+export default App;

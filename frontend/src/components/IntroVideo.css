@@ -1,0 +1,15 @@
+.video-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: auto;
+  z-index: 1;
+}
+
+.video-element {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
