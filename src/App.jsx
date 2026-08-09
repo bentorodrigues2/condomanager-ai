@@ -1,11 +1,16 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./router/AppRouter.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Login from "./components/Login";
+import Dashboard from "./components/Dashboard";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </BrowserRouter>
   );
 }
