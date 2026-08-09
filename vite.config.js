@@ -1,20 +1,14 @@
-import { defineConfig } from "vite";
+﻿import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  plugins: [react()],
-  root: ".",
-  publicDir: "public",
-  base: "",
-  build: {
-    outDir: "dist",
-    emptyOutDir: true,
-    copyPublicDir: true,
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, "index.html")
-      }
-    }
-  }
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      includeAssets: ["favicon.ico", "robots.txt"],
+      manifest: true
+    })
+  ]
 });
