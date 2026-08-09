@@ -696,6 +696,17 @@ export default function App() {
             </div>
           </div>
 
+          <div className="mt-4 rounded-3xl overflow-hidden border border-slate-800/70 bg-slate-950/40 shadow-2xl">
+            <video
+              src="/assets/videos/intro.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-auto max-h-[280px] object-cover"
+            />
+          </div>
+
           {/* ACTIVE LOCKOUT / COOLDOWN / WARNING BANNERS */}
           {userSec.isLocked ? (
             <div className="bg-red-950/80 border border-red-500/60 p-2.5 rounded-xl text-left space-y-1">

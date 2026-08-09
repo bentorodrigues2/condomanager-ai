@@ -31,7 +31,7 @@ export default function LayoutTop() {
       {/* VIDEO AO CENTRO */}
       <div className="video-frame">
         <video
-          src="/videos/intro.mp4"
+          src="/assets/videos/intro.mp4"
           autoPlay
           muted
           loop
