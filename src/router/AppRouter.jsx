@@ -1,4 +1,5 @@
-﻿import React from "react";
+﻿import NotificationSettings from "../components/NotificationSettings";
+import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import AppLayout from "../layout/AppLayout";
 
