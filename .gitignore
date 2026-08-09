@@ -7,5 +7,5 @@ coverage/
 .env*
 !.env.example
 
-.vercel
+.vercel/
 github-token.txt
