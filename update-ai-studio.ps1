@@ -53,7 +53,8 @@ else {
 
 # Garantir wrapper
 $wrapperSource = "$root\AIStudioApp.jsx"
-$wrapperDest = "$zipFolder\AIStudioApp.jsx"
+$wrapperDest = "$root\AIStudioApp.jsx"
+
 
 Write-Host "Garantindo wrapper..."
 if ((Test-Path $wrapperSource) -and (Test-Path $wrapperDest)) {
