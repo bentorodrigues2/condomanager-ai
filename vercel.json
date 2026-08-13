@@ -1,9 +1,5 @@
 ﻿{
-    "outputDirectory":  "dist",
-    "buildCommand":  "npm run build",
-    "env":  {
-                "VITE_SUPABASE_ANON_KEY":  "@vite_supabase_anon_key",
-                "VITE_SUPABASE_URL":  "@vite_supabase_url"
-            },
-    "framework":  "vite"
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
 }
