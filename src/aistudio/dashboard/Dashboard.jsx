@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import Charts from './Charts';
 import { getExpenses, getDocuments, getOwners, getAssemblies, getBalances } from '../data/condoData';
 
 export default function Dashboard() {
+  const [view, setView] = useState('charts');
+
   const [expenses, setExpenses] = useState([]);
   const [documents, setDocuments] = useState([]);
   const [owners, setOwners] = useState([]);
@@ -20,20 +23,29 @@ export default function Dashboard() {
     <div style={{ padding: '20px' }}>
       <h2>Dashboard Inteligente</h2>
 
-      <h3>Despesas</h3>
-      <pre>{JSON.stringify(expenses, null, 2)}</pre>
+      <button onClick={() => setView('charts')}>Gráficos</button>
+      <button onClick={() => setView('raw')}>Dados</button>
 
-      <h3>Documentos</h3>
-      <pre>{JSON.stringify(documents, null, 2)}</pre>
+      {view === 'charts' && <Charts />}
 
-      <h3>Proprietários</h3>
-      <pre>{JSON.stringify(owners, null, 2)}</pre>
+      {view === 'raw' && (
+        <>
+          <h3>Despesas</h3>
+          <pre>{JSON.stringify(expenses, null, 2)}</pre>
 
-      <h3>Assembleias</h3>
-      <pre>{JSON.stringify(assemblies, null, 2)}</pre>
+          <h3>Documentos</h3>
+          <pre>{JSON.stringify(documents, null, 2)}</pre>
 
-      <h3>Saldos</h3>
-      <pre>{JSON.stringify(balances, null, 2)}</pre>
+          <h3>Proprietários</h3>
+          <pre>{JSON.stringify(owners, null, 2)}</pre>
+
+          <h3>Assembleias</h3>
+          <pre>{JSON.stringify(assemblies, null, 2)}</pre>
+
+          <h3>Saldos</h3>
+          <pre>{JSON.stringify(balances, null, 2)}</pre>
+        </>
+      )}
     </div>
   );
 }
