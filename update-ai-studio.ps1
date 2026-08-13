@@ -1,33 +1,49 @@
 Write-Host "Atualização automática do AI Studio iniciada..."
 
-# Caminho FINAL onde o AI Studio vive
-$AI_DST = ".\src\aistudio\src"
+# Caminhos
+$root = ".\src\aistudio"
+$zipFolder = "$root\src"
+$libFolder = "$zipFolder\lib"
 
-# Verificar se a pasta existe
-if (!(Test-Path $AI_DST)) {
-    Write-Host "ERRO: A pasta src/aistudio/src não existe."
-    Write-Host "Cria a pasta e extrai o ZIP diretamente para lá."
-    exit
+# Garantir pasta lib
+if (!(Test-Path $libFolder)) {
+    Write-Host "A criar pasta lib..."
+    New-Item -ItemType Directory -Path $libFolder | Out-Null
 }
 
-# Garantir supabase eterno
-Write-Host "A garantir supabase eterno..."
-Copy-Item ".\src\aistudio\supabase.ts" ".\src\aistudio\src\lib\supabase.ts" -Force
+# Copiar supabase.ts apenas se existir
+$supabaseSource = "$root\supabase.ts"
+$supabaseDest = "$libFolder\supabase.ts"
 
-# Garantir wrapper eterno
+if (Test-Path $supabaseSource) {
+    Write-Host "A garantir supabase eterno..."
+    Copy-Item $supabaseSource $supabaseDest -Force
+} else {
+    Write-Host "⚠️ supabase.ts não existe em src/aistudio — ignorado."
+}
+
+# Copiar wrapper apenas se destino for diferente
+$wrapperSource = "$root\AIStudioApp.jsx"
+$wrapperDest = "$root\AIStudioApp.jsx"
+
 Write-Host "A garantir wrapper eterno..."
-Copy-Item ".\src\aistudio\AIStudioApp.jsx" ".\src\aistudio\AIStudioApp.jsx" -Force
+# Não copiar se for o mesmo ficheiro
+if ($wrapperSource -ne $wrapperDest) {
+    Copy-Item $wrapperSource $wrapperDest -Force
+} else {
+    Write-Host "Wrapper já está no sítio — ignorado."
+}
 
-# Commit automático
+# Commit
 Write-Host "A criar commit..."
 git add .
-git commit -m "Atualização automática do AI Studio"
+git commit -m "Atualização automática do AI Studio" --allow-empty
 
-# Push automático
+# Push
 Write-Host "A enviar para GitHub..."
 git push
 
-# Deploy automático no Vercel
+# Deploy
 Write-Host "A disparar deploy no Vercel..."
 vercel --prod
 
