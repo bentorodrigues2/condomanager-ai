@@ -38,6 +38,7 @@ export default function App() {
 
           <Routes>
         <Route path="/condominios" element={<ProtectedRoute><Condominios /></ProtectedRoute>} />
+            <Route path="/login" element={<Navigate to="/app/login" replace />} />
         <Route path="/app/*" element={<AIStudioApp />} />
             <Route path="/" element={<AuthGate requiredRole="admin"><Dashboard /></AuthGate>} />
             <Route path="/predios" element={<AuthGate requiredRole="gestor"><Predios /></AuthGate>} />
