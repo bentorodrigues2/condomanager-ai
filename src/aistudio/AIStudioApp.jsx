@@ -1,6 +1,6 @@
 import React from 'react';
 import { AIStudioRouter } from './router';
-import './index.css';
+import '../index.css';
 
 export default function AIStudioApp() {
   return (
