@@ -1,0 +1,544 @@
+﻿{
+    "icons":  [
+                  {
+                      "id":  "access"
+                  },
+                  {
+                      "id":  "accessibility"
+                  },
+                  {
+                      "id":  "add"
+                  },
+                  {
+                      "id":  "administrator"
+                  },
+                  {
+                      "id":  "ai-active"
+                  },
+                  {
+                      "id":  "ai-assistant"
+                  },
+                  {
+                      "id":  "ai-chat"
+                  },
+                  {
+                      "id":  "ai-waiting"
+                  },
+                  {
+                      "id":  "alarm"
+                  },
+                  {
+                      "id":  "analytics"
+                  },
+                  {
+                      "id":  "api"
+                  },
+                  {
+                      "id":  "approval"
+                  },
+                  {
+                      "id":  "archive"
+                  },
+                  {
+                      "id":  "arrow-down"
+                  },
+                  {
+                      "id":  "arrow-left"
+                  },
+                  {
+                      "id":  "arrow-right"
+                  },
+                  {
+                      "id":  "arrow-up"
+                  },
+                  {
+                      "id":  "assembly"
+                  },
+                  {
+                      "id":  "auto-archive"
+                  },
+                  {
+                      "id":  "automatic-receipt"
+                  },
+                  {
+                      "id":  "automation"
+                  },
+                  {
+                      "id":  "backup"
+                  },
+                  {
+                      "id":  "balance"
+                  },
+                  {
+                      "id":  "bank"
+                  },
+                  {
+                      "id":  "bank-transfer"
+                  },
+                  {
+                      "id":  "breakdown"
+                  },
+                  {
+                      "id":  "breakdown-found"
+                  },
+                  {
+                      "id":  "budget"
+                  },
+                  {
+                      "id":  "building"
+                  },
+                  {
+                      "id":  "building-rules"
+                  },
+                  {
+                      "id":  "calendar"
+                  },
+                  {
+                      "id":  "camera"
+                  },
+                  {
+                      "id":  "chart"
+                  },
+                  {
+                      "id":  "chat"
+                  },
+                  {
+                      "id":  "checklist"
+                  },
+                  {
+                      "id":  "cleaning"
+                  },
+                  {
+                      "id":  "cleaning-complete"
+                  },
+                  {
+                      "id":  "cleaning-pending"
+                  },
+                  {
+                      "id":  "cleaning-photos"
+                  },
+                  {
+                      "id":  "cleaning-report"
+                  },
+                  {
+                      "id":  "close"
+                  },
+                  {
+                      "id":  "cloud"
+                  },
+                  {
+                      "id":  "collection-note"
+                  },
+                  {
+                      "id":  "common-area"
+                  },
+                  {
+                      "id":  "completed"
+                  },
+                  {
+                      "id":  "contact"
+                  },
+                  {
+                      "id":  "contact-person"
+                  },
+                  {
+                      "id":  "contract"
+                  },
+                  {
+                      "id":  "contract-validity"
+                  },
+                  {
+                      "id":  "credit-card"
+                  },
+                  {
+                      "id":  "dashboard"
+                  },
+                  {
+                      "id":  "delegate"
+                  },
+                  {
+                      "id":  "document"
+                  },
+                  {
+                      "id":  "documents"
+                  },
+                  {
+                      "id":  "download"
+                  },
+                  {
+                      "id":  "edit"
+                  },
+                  {
+                      "id":  "electrical-system"
+                  },
+                  {
+                      "id":  "elevator"
+                  },
+                  {
+                      "id":  "email"
+                  },
+                  {
+                      "id":  "emergency"
+                  },
+                  {
+                      "id":  "energy"
+                  },
+                  {
+                      "id":  "equipment"
+                  },
+                  {
+                      "id":  "error"
+                  },
+                  {
+                      "id":  "expense"
+                  },
+                  {
+                      "id":  "export"
+                  },
+                  {
+                      "id":  "extra-fee"
+                  },
+                  {
+                      "id":  "favourites"
+                  },
+                  {
+                      "id":  "fee"
+                  },
+                  {
+                      "id":  "filter"
+                  },
+                  {
+                      "id":  "financial-export"
+                  },
+                  {
+                      "id":  "firefighters"
+                  },
+                  {
+                      "id":  "fire-system"
+                  },
+                  {
+                      "id":  "floor"
+                  },
+                  {
+                      "id":  "garage"
+                  },
+                  {
+                      "id":  "gas"
+                  },
+                  {
+                      "id":  "gate"
+                  },
+                  {
+                      "id":  "global-message"
+                  },
+                  {
+                      "id":  "help"
+                  },
+                  {
+                      "id":  "home"
+                  },
+                  {
+                      "id":  "iban-building"
+                  },
+                  {
+                      "id":  "iban-works"
+                  },
+                  {
+                      "id":  "income"
+                  },
+                  {
+                      "id":  "individual-message"
+                  },
+                  {
+                      "id":  "info"
+                  },
+                  {
+                      "id":  "insights"
+                  },
+                  {
+                      "id":  "inspection"
+                  },
+                  {
+                      "id":  "insurance"
+                  },
+                  {
+                      "id":  "integration"
+                  },
+                  {
+                      "id":  "intervention"
+                  },
+                  {
+                      "id":  "intervention-complete"
+                  },
+                  {
+                      "id":  "intervention-pending"
+                  },
+                  {
+                      "id":  "invitation"
+                  },
+                  {
+                      "id":  "invoice"
+                  },
+                  {
+                      "id":  "key"
+                  },
+                  {
+                      "id":  "kpi"
+                  },
+                  {
+                      "id":  "language"
+                  },
+                  {
+                      "id":  "learning"
+                  },
+                  {
+                      "id":  "lease"
+                  },
+                  {
+                      "id":  "lease-contract"
+                  },
+                  {
+                      "id":  "light"
+                  },
+                  {
+                      "id":  "lock"
+                  },
+                  {
+                      "id":  "logout"
+                  },
+                  {
+                      "id":  "logs"
+                  },
+                  {
+                      "id":  "mailbox"
+                  },
+                  {
+                      "id":  "maintenance"
+                  },
+                  {
+                      "id":  "menu"
+                  },
+                  {
+                      "id":  "message-sent"
+                  },
+                  {
+                      "id":  "meter"
+                  },
+                  {
+                      "id":  "minutes"
+                  },
+                  {
+                      "id":  "more"
+                  },
+                  {
+                      "id":  "multiple-payment"
+                  },
+                  {
+                      "id":  "nfc"
+                  },
+                  {
+                      "id":  "notification-owner"
+                  },
+                  {
+                      "id":  "notification-tenant"
+                  },
+                  {
+                      "id":  "ocr"
+                  },
+                  {
+                      "id":  "owner"
+                  },
+                  {
+                      "id":  "package"
+                  },
+                  {
+                      "id":  "parking-space"
+                  },
+                  {
+                      "id":  "payment"
+                  },
+                  {
+                      "id":  "pending"
+                  },
+                  {
+                      "id":  "pending-correction"
+                  },
+                  {
+                      "id":  "personal-documents"
+                  },
+                  {
+                      "id":  "personal-history"
+                  },
+                  {
+                      "id":  "police"
+                  },
+                  {
+                      "id":  "power"
+                  },
+                  {
+                      "id":  "print"
+                  },
+                  {
+                      "id":  "profile"
+                  },
+                  {
+                      "id":  "proof-of-payment"
+                  },
+                  {
+                      "id":  "provider"
+                  },
+                  {
+                      "id":  "qr-code"
+                  },
+                  {
+                      "id":  "questionnaire"
+                  },
+                  {
+                      "id":  "questionnaire-results"
+                  },
+                  {
+                      "id":  "receipt"
+                  },
+                  {
+                      "id":  "recommendation"
+                  },
+                  {
+                      "id":  "refresh"
+                  },
+                  {
+                      "id":  "rejected"
+                  },
+                  {
+                      "id":  "remove"
+                  },
+                  {
+                      "id":  "report"
+                  },
+                  {
+                      "id":  "reservation"
+                  },
+                  {
+                      "id":  "results-pdf"
+                  },
+                  {
+                      "id":  "scan-document"
+                  },
+                  {
+                      "id":  "search"
+                  },
+                  {
+                      "id":  "send-message"
+                  },
+                  {
+                      "id":  "sensor"
+                  },
+                  {
+                      "id":  "settings"
+                  },
+                  {
+                      "id":  "signature"
+                  },
+                  {
+                      "id":  "smart-rules"
+                  },
+                  {
+                      "id":  "space-capacity"
+                  },
+                  {
+                      "id":  "staircase"
+                  },
+                  {
+                      "id":  "star"
+                  },
+                  {
+                      "id":  "success"
+                  },
+                  {
+                      "id":  "supplier-called"
+                  },
+                  {
+                      "id":  "survey"
+                  },
+                  {
+                      "id":  "survey-results"
+                  },
+                  {
+                      "id":  "sync"
+                  },
+                  {
+                      "id":  "team"
+                  },
+                  {
+                      "id":  "technical-equipment"
+                  },
+                  {
+                      "id":  "tenant"
+                  },
+                  {
+                      "id":  "tools"
+                  },
+                  {
+                      "id":  "treasury"
+                  },
+                  {
+                      "id":  "trigger"
+                  },
+                  {
+                      "id":  "unit"
+                  },
+                  {
+                      "id":  "unit-documents"
+                  },
+                  {
+                      "id":  "unit-history"
+                  },
+                  {
+                      "id":  "unlock"
+                  },
+                  {
+                      "id":  "upload"
+                  },
+                  {
+                      "id":  "ventilation-system"
+                  },
+                  {
+                      "id":  "video-surveillance"
+                  },
+                  {
+                      "id":  "visitor"
+                  },
+                  {
+                      "id":  "warning"
+                  },
+                  {
+                      "id":  "water"
+                  },
+                  {
+                      "id":  "water-pump"
+                  },
+                  {
+                      "id":  "workflow"
+                  },
+                  {
+                      "id":  "works"
+                  },
+                  {
+                      "id":  "works-awarded"
+                  },
+                  {
+                      "id":  "works-complete"
+                  },
+                  {
+                      "id":  "works-contract"
+                  },
+                  {
+                      "id":  "works-in-progress"
+                  },
+                  {
+                      "id":  "works-invoice"
+                  },
+                  {
+                      "id":  "works-report"
+                  }
+              ]
+}
